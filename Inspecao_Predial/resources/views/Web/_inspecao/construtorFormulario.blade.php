@@ -7,7 +7,7 @@
         <div class="container-fluid screan" id="container-fluid">
             <div class="tela">
                 <!-- inicio formulario check-box -->
-                <form action="{{route('forms.create')}}" method="post" enctype="multipart/form-data">
+                <form action="{{ route('inspecao.store', ['id' => $edificio->id])}}" method="post" enctype="multipart/form-data">
                     @CSRF
                     <div id="tela-Formulario">
                         @if($errors->all())
@@ -19,7 +19,12 @@
                         @endif
                         <h1 class="display-4 ">Construa seu Formulario.</h1>
 
-                        <p class="text-muted border-bottom">TÓPICOS DA INSPEÇÃO DE CAMPO. </p>
+                        <p class="text-muted border-bottom">
+                            Selecione os Campos que serão inspecionado no Edificio:
+                            <span class="text-primary">
+                                {{ $edificio->nome_edificio }}
+                            </span>
+                        </p>
 
                         <div class="screan-formulario">
 

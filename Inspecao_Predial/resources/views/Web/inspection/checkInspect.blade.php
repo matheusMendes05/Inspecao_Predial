@@ -4,7 +4,7 @@
 
 
 <div class="border-bottom">
-    <h1 class="text-muted display-4"> Verificar Inspeção</h1>
+    <h1 class="text-muted display-4"> Dados de Inspeção</h1>
 </div>
 
 
@@ -13,88 +13,110 @@
 <div class="container-fluid">
     @if(isset($collection['inspecao']))
     <div class="text-left my-2">
-        <button type="button" class="btn bg-success text-white btn-lg btn-block" data-toggle="collapse" data-target="#form-Edificio" aria-expanded="true" aria-controls="form-Edificio">Edificio.</button>
+        <button type="button" class="btn bg-success text-white btn-lg btn-block" data-toggle="collapse" data-target="#form-Edificio" aria-expanded="true" aria-controls="form-Edificio">Informações Edificio.</button>
     </div>
 
 
     <div class="collapse navbar-collapse mb-4 show" id="form-Edificio">
         <div class="collapse navbar-collapse mb-4 show" id="form-notaO">
-            <div class="row bg-light">
-                <div class="col-12 col-sm-6 col-md-6 border border-white rounded">
-                    <p class="">
-                        <h4 class="text-secondary d-inline">Engenheiro Responsavel </h4> {{$collection['inspecao']['nome_responsavel']}}
-                    </p>
-                </div>
-                <div class="col-12 col-sm-6 col-md-6 border border-white rounded">
-                    <p class="">
-                        <h4 class="text-secondary d-inline">Data de Inspeção: </h4> {{$collection['inspecao']['data']}}
-                    </p>
-                </div>
-                <div class="col-12 col-sm-6 col-md-6 border border-white rounded">
-                    <p class="">
-                        <h4 class="text-secondary d-inline">Nome Edificio: </h4> {{$collection['inspecao']['nome_edificio']}}
-                    </p>
-                </div>
-                <div class="col-12 col-sm-6 col-md-6 border border-white rounded">
-                    <p class="">
-                        <h4 class="text-secondary d-inline">Endereço: </h4> {{$collection['inspecao']['endereco']}}
-                    </p>
-                </div>
-                <div class="col-12 col-sm-6 col-md-6 border border-white rounded">
-                    <p class="">
-                        <h4 class="text-secondary d-inline">Bairro: </h4> {{$collection['inspecao']['bairro']}}
-                    </p>
-                </div>
-                <div class="col-12 col-sm-6 col-md-6 border border-white rounded">
-                    <p class="">
-                        <h4 class="text-secondary d-inline">Complemento: </h4> {{$collection['inspecao']['complemento']}}
-                    </p>
-                </div>
-                <div class="col-12 col-sm-6 col-md-6 border border-white rounded">
-                    <p class="">
-                        <h4 class="text-secondary d-inline">CEP: </h4> {{$collection['inspecao']['cep']}}
-                    </p>
-                </div>
-                <div class="col-12 col-sm-6 col-md-6 border border-white rounded">
-                    <p class="">
-                        <h4 class="text-secondary d-inline">CNPJ: </h4> {{$collection['inspecao']['cnpj']}}
-                    </p>
-                </div>
-                <div class="col-12 col-sm-6 col-md-6 border border-white rounded">
-                    <p class="">
-                        <h4 class="text-secondary d-inline">Tipologia: </h4> {{$collection['inspecao']['tipologia']}}
-                    </p>
-                </div>
-                <div class="col-12 col-sm-6 col-md-6 border border-white rounded">
-                    <p class="">
-                        <h4 class="text-secondary d-inline">Outros: </h4> {{$collection['inspecao']['outros']}}
-                    </p>
-                </div>
-                <div class="col-12 col-sm-6 col-md-6 border border-white rounded">
-                    <p class="">
-                        <h4 class="text-secondary d-inline">Numero de Pavimentos: </h4> {{$collection['inspecao']['n_pavimentos']}}
-                    </p>
-                </div>
-                <div class="col-12 col-sm-6 col-md-6 border border-white rounded">
-                    <p class="">
-                        <h4 class="text-secondary d-inline">Ano Construcao: </h4> {{$collection['inspecao']['ano_construcao']}}
-                    </p>
-                </div>
-                <div class="col-12 col-sm-6 col-md-6 border border-white rounded">
-                    <p class="">
-                        <h4 class="text-secondary d-inline">Construtora: </h4> {{$collection['inspecao']['construtora']}}
-                    </p>
-                </div>
-                <div class="col-12 col-sm-6 col-md-6 border border-white rounded">
-                    <p class="">
-                        <h4 class="text-secondary d-inline">Administrador: </h4> {{$collection['inspecao']['administrador']}}
-                    </p>
-                </div>
-                <div class="col-12 col-sm-6 col-md-6 border border-white rounded">
-                    <p class="">
-                        <h4 class="text-secondary d-inline">Responsavel pelo acompanhamento da obra: </h4> {{$collection['inspecao']['responsavel_acompanhamento_obra']}}
-                    </p>
-                </div>
+            <div class="row">
+
+                <fieldset class="col-12 col-sm-12 col-md-12 border  rounded p-4">
+                    <legend class="text-success">Dados de Inspeção</legend>
+
+                    <div class="row">
+                        <div class="col-12 col-sm-6 col-md-4 border border-white rounded">
+                            <p class="border rounded p-2">
+                                <span class="text-dark d-inline font-weight-bold">Eng. Responsavel: </span> {{$collection['inspecao']['nome_responsavel']}}
+                            </p>
+
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-4 border border-white rounded">
+                            <p class="border rounded p-2">
+                                <span class="text-dark d-inline font-weight-bold">Data de Inspeção: </span> {{$collection['inspecao']['data']}}
+                            </p>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-4 border border-white rounded">
+                            <p class="border rounded p-2">
+                                <span class="text-dark d-inline font-weight-bold">Nome da Edificação: </span> {{$collection['inspecao']['nome_edificio']}}
+                            </p>
+                        </div>
+                    </div>
+                </fieldset>
+
+                <fieldset class="col-12 col-sm-12 col-md-12 border  rounded my-4 p-4">
+                    <legend class="text-success">Localização</legend>
+                    <div class="row">
+                        <div class="col-12 col-sm-6 col-md-4 border border-white rounded">
+                            <p class="border rounded p-2">
+                                <span class="text-dark d-inline font-weight-bold">Endereço: </span> {{$collection['inspecao']['endereco']}}
+                            </p>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-4 border border-white rounded">
+                            <p class="border rounded p-2">
+                                <span class="text-dark d-inline font-weight-bold">Bairro: </span> {{$collection['inspecao']['bairro']}}
+                            </p>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-4 border border-white rounded">
+                            <p class="border rounded p-2">
+                                <span class="text-dark d-inline font-weight-bold">Complemento: </span> {{$collection['inspecao']['complemento']}}
+                            </p>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-4 border border-white rounded">
+                            <p class="border rounded p-2">
+                                <span class="text-dark d-inline font-weight-bold">CEP: </span> {{$collection['inspecao']['cep']}}
+                            </p>
+                        </div>
+                    </div>
+
+                </fieldset>
+
+                <fieldset class="col-12 col-sm-12 col-md-12 border  rounded p-4">
+                    <legend class="text-success">Informações Sobre o Edificio</legend>
+
+                    <div class="row">
+                        <div class="col-12 col-sm-6 col-md-4 border border-white rounded">
+                            <p class="border rounded p-2">
+                                <span class="text-dark d-inline font-weight-bold">CNPJ:</span> {{$collection['inspecao']['cnpj']}}
+                            </p>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-4 border border-white rounded">
+                            <p class="border rounded p-2">
+                                <span class="text-dark d-inline font-weight-bold">Tipologia: </span> {{$collection['inspecao']['tipologia']}}
+                            </p>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-4 border border-white rounded">
+                            <p class="border rounded p-2">
+                                <span class="text-dark d-inline font-weight-bold">Outros:</span> {{$collection['inspecao']['outros']}}
+                            </p>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-4 border border-white rounded">
+                            <p class="border rounded p-2">
+                                <span class="text-dark d-inline font-weight-bold">Nº Pavimentos:</span> {{$collection['inspecao']['n_pavimentos']}}
+                            </p>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-4 border border-white rounded">
+                            <p class="border rounded p-2">
+                                <span class="text-dark d-inline font-weight-bold">Ano Construção Edificio:</span> {{$collection['inspecao']['ano_construcao']}}
+                            </p>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-4 border border-white rounded">
+                            <p class="border rounded p-2">
+                                <span class="text-dark d-inline font-weight-bold">Construtora:</span> {{$collection['inspecao']['construtora']}}
+                            </p>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-6 border border-white rounded">
+                            <p class="border rounded p-2">
+                                <span class="text-dark d-inline font-weight-bold">Administrador:</span> {{$collection['inspecao']['administrador']}}
+                            </p>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-6 border border-white rounded">
+                            <p class="border rounded p-2">
+                                <span class="text-dark d-inline font-weight-bold">Responsavel pelo acompanhamento da obra:</span> {{$collection['inspecao']['responsavel_acompanhamento_obra']}}
+                            </p>
+                        </div>
+                    </div>
+                </fieldset>
 
             </div>
         </div>

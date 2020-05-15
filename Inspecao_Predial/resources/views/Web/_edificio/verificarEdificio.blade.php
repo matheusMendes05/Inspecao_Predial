@@ -1,0 +1,202 @@
+@extends('layouts.dashboard')
+
+@section('content')
+
+@section('content')
+<div class="container">
+    <div class="text-">
+        <h1 class="display-4 text-muted border-bottom">
+            Sistema de Inspeção Predial.
+        </h1>
+    </div>
+</div>
+
+
+<div class="container">
+    <div class=" my-4 p-2">
+
+        <div class="row">
+            <div class="col-12  border p-2 text-white bg-success">
+                <div class="text-center">
+                    <h4>Dados de Edificação</h4>
+                </div>
+            </div>
+
+            <div class="col-8 border border mt-1">
+                <p class="text-muted">Responsável pela Inspeção:
+                    <span class="text-dark font-weight-bold">{{$edificio->responsavel_inspecao}}</span>
+                </p>
+            </div>
+            <div class="col-4 border border mt-1">
+                <p class="text-muted">Data:
+                    <span class="text-dark font-weight-bold">{{$edificio->data}}</span>
+                </p>
+
+            </div>
+            <div class="col-12 border border mt-1">
+                <p class="text-muted">Nome do edifício:
+                    <span class="text-dark font-weight-bold">
+                        {{$edificio->nome_edificio}}
+                    </span>
+                </p>
+
+            </div>
+            <div class="col-8 border border mt-1">
+                <p class="text-muted">Endereço:
+                    <span class="text-dark font-weight-bold">
+                        {{$edificio->endereco}}
+                    </span>
+                </p>
+            </div>
+            <div class="col-4 border border mt-1">
+                <p class="text-muted">Bairro:
+                    <span class="text-dark font-weight-bold">
+                        {{$edificio->bairro}}
+                    </span>
+                </p>
+            </div>
+            <div class="col-8 border border mt-1">
+                <p class="text-muted">Complemento:
+                    <span class="text-dark font-weight-bold">
+                        {{$edificio->complemento}}
+                    </span>
+                </p>
+
+            </div>
+            <div class="col-4 border border mt-1">
+                <p class="text-muted">CEP:
+                    <span class="text-dark font-weight-bold">
+                        {{$edificio->cep}}
+                    </span>
+                </p>
+            </div>
+            <div class="col-4 border border mt-1">
+                <p class="text-muted">CNPJ:
+                    <span class="text-dark font-weight-bold">
+                        {{$edificio->cnpj}}
+                    </span>
+                </p>
+            </div>
+            <div class="col-8 border border mt-1">
+                <p class="text-muted">Responsável pela Edificação:
+                    <span class="text-dark font-weight-bold">
+                        {{$edificio->responsavel_edificio}}
+
+                    </span>
+                </p>
+
+            </div>
+            <div class="col-4 border border mt-1">
+                <p class="text-muted">Telefone:
+                    <span class="text-dark font-weight-bold">
+                        {{$edificio->responsavel_telefone}}
+
+                    </span>
+                </p>
+            </div>
+            <div class="col-8 border border mt-1">
+                <p class="text-muted">Email:
+                    <span class="text-dark font-weight-bold">
+                        {{$edificio->responsavel_email}}
+
+                    </span>
+                </p>
+            </div>
+            <div class="col-12 border border mt-1">
+                <p class="text-muted">TIPOLOGIA:
+                    <span class="text-dark font-weight-bold">
+                        {{$edificio->tipologia}}
+                    </span>
+                </p>
+            </div>
+            <div class="col-6 border border mt-1">
+                <p class="text-muted">Nº de pavimentos:
+                    <span class="text-dark font-weight-bold">
+                        {{$edificio->n_pavimentos}}
+                    </span>
+                </p>
+            </div>
+            <div class="col-6 border border mt-1">
+                <p class="text-muted">Ano de Construção:
+                    <span class="text-dark font-weight-bold">
+                        {{$edificio->ano_construcao}}
+                    </span>
+                </p>
+            </div>
+            <div class="col-6 border border mt-1">
+                <p class="text-muted">Construtora:
+                    <span class="text-dark font-weight-bold">
+                        {{$edificio->construtora}}
+                    </span>
+                </p>
+            </div>
+            <div class="col-6 border border mt-1">
+                <p class="text-muted">
+                    Administrador:
+                    <span class="text-dark font-weight-bold">
+                        {{$edificio->administrador}}
+                    </span>
+                </p>
+            </div>
+            <div class="col-12 border border mt-1">
+                <p class="text-muted">
+                    Responsável Pelo Acompanhamento da Obra:
+                    <span class="text-dark font-weight-bold">
+                        {{$edificio->responsavel_acompanhamento_obra}}
+                    </span>
+                </p>
+            </div>
+
+            <div class="col-12  border p-2 text-white bg-success">
+                <div class="text-center">
+
+                </div>
+            </div>
+
+            <div class="col-12 col-sm-12 col-md-12 border border-muted">
+
+                <div class=" p-4 bg-light">
+                    <div class="text-center">
+                        <span class="mx-4 alert alert-success col-sm-12">
+                            <a href="{{route('inspecao.create',['id'=> $edificio->id])}}" class="text-success">
+                                Inspecionar Edificio?
+                                <i class="fa fa-building" aria-hidden="true"></i>
+                            </a>
+                        </span>
+
+
+                        <span class="mx-4 alert alert-primary col-sm-12">
+                            <a href=" {{ route('edificio.edit', ['id' => $edificio->id ])}} " class="text-primary col-sm-12">
+                                Editar Registro
+                                <i class="fas fa-edit    "></i>
+                            </a>
+                        </span>
+                        <!-- <div class="col-4">
+                            <button class="btn btn-outline-primary">
+                                Editar Registro
+                                <i class="fas fa-edit    "></i>
+                            </button>
+                        </div> -->
+
+                        <form action="{{ route('edificio.destroy', ['id' => $edificio->id])}}" class="d-inline" method="post">
+                            @CSRF
+                            @method('delete')
+                            <!-- <button class="btn btn-outline-danger btn-lg" type="submit">Excluir <i class="fas fa-trash"></i></button> -->
+
+                            <span class="mx-4 alert alert-danger">
+                                <button type="submit" class="btn text-danger">Excluir Registro <i class="fas fa-trash"></i></button>
+                            </span>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+
+    @endsection

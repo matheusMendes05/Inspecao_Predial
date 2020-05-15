@@ -27,9 +27,9 @@ Auth::routes();
 
 
 
+Route::get('/home', 'HomeController@index')->name('home');
 
 Route::group(['middleware' => 'auth'], function () {
-    Route::get('/home', 'HomeController@index')->name('home');
 
     // Edit user
     Route::get('/perfil/usuario/{id}', 'Engineer\engineerController@edit')->name('user.edit');
@@ -50,6 +50,48 @@ Route::group(['middleware' => 'auth'], function () {
     // Contruct Forms
     Route::get('/inspecao/construtor-formulario', 'Inspection\formsConstruct@index')->name('forms.index');
     Route::post('/inspecao/construtor-formulario/novo', 'Inspection\formsConstruct@create')->name('forms.create');
+
+
+
+
+
+    /***
+     * Criando Edificios
+     */
+
+    // formulario de cadastro de edificios
+    Route::get('/edificio', 'Edificio\edificioController@index')->name('edificio.index');
+
+    Route::post('/edificio/novo', 'Edificio\edificioController@create')->name('edificio.create');
+
+    //  historico de Edificios
+    Route::get('/edificio/historico', 'Edificio\edificioController@historico')->name('edificio.historico');
+
+    // verificando edificios
+    Route::get('/edificio/verificar/{id}', 'Edificio\edificioController@show')->name('edificio.show');
+
+    // excluindo edificios
+    Route::delete('/edificio/excluir/{id}', 'Edificio\edificioController@destroy')->name('edificio.destroy');
+
+    // editar edificios
+    Route::get('/edificio/editar/{id}', 'Edificio\edificioController@edit')->name('edificio.edit');
+    Route::put('/edificio/editar/{id}/novo', 'Edificio\edificioController@update')->name('edificio.update');
+
+
+    /**
+     * Insção de edificios
+     */
+    Route::get('/edificio/{id}/inspecionar', 'Inspecao\inspecaoController@create')->name('inspecao.create');
+
+    // Construtor de Formulario - o usuario seleciona os campos necessarios para a inspecao
+    Route::post('/edificio/{id}/inspecionar/construtor-formulario', 'Inspecao\inspecaoController@store')->name('inspecao.store');
+    // formularios
+
+
+
+
+
+
 
 
     // Inspection
