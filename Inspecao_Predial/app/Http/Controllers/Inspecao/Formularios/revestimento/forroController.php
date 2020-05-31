@@ -57,7 +57,7 @@ class forroController extends Controller
                     if ($request->file('txtFotoDeformacaoForro')->isValid()) {
                         // nomeando arquivo
                         $nameEstrutura = $request->txtLocalDeformacaoForro . '.' . $request->txtFotoDeformacaoForro->extension();
-                        $forro->foto_deformacao_excessiva = $request->file('txtFotoDeformacaoForro')->storeAs('revestimento/forro/txtFotoDeformacaoForro', $nameEstrutura);
+                        $forro->foto_deformacao_excessiva = $request->file('txtFotoDeformacaoForro')->storeAs('revestimento/forro/txtFotoDeformacaoForro', $nameEstrutura, 's3');
                     } else {
                         $forro->foto_deformacao_excessiva = 'SEM IMAGEM';
                     }
@@ -71,7 +71,7 @@ class forroController extends Controller
                     if ($request->file('txtFotoFissuraForro')->isValid()) {
                         // nomeando arquivo
                         $nameEstrutura = $request->txtLocalFissuraForro . '.' . $request->txtFotoFissuraForro->extension();
-                        $forro->foto_fissura = $request->file('txtFotoFissuraForro')->storeAs('revestimento/forro/txtFotoFissuraForro', $nameEstrutura);
+                        $forro->foto_fissura = $request->file('txtFotoFissuraForro')->storeAs('revestimento/forro/txtFotoFissuraForro', $nameEstrutura, 's3');
                     } else {
                         $forro->foto_fissura = 'SEM IMAGEM';
                     }
@@ -84,7 +84,7 @@ class forroController extends Controller
                     if ($request->file('txtFotoDesencaixeForro')->isValid()) {
                         // nomeando arquivo
                         $nameEstrutura = $request->txtLocalDesencaixeForro . '.' . $request->txtFotoDesencaixeForro->extension();
-                        $forro->foto_desencaixe = $request->file('txtFotoDesencaixeForro')->storeAs('revestimento/forro/txtFotoDesencaixeForro', $nameEstrutura);
+                        $forro->foto_desencaixe = $request->file('txtFotoDesencaixeForro')->storeAs('revestimento/forro/txtFotoDesencaixeForro', $nameEstrutura, 's3');
                     } else {
                         $forro->foto_desencaixe = 'SEM IMAGEM';
                     }
@@ -97,7 +97,7 @@ class forroController extends Controller
                     if ($request->file('txtFotoCorrosaoForro')->isValid()) {
                         // nomeando arquivo
                         $nameEstrutura = $request->txtLocalCorrosaoForro . '.' . $request->txtFotoCorrosaoForro->extension();
-                        $forro->foto_ultilizacao = $request->file('txtFotoCorrosaoForro')->storeAs('revestimento/forro/txtFotoCorrosaoForro', $nameEstrutura);
+                        $forro->foto_ultilizacao = $request->file('txtFotoCorrosaoForro')->storeAs('revestimento/forro/txtFotoCorrosaoForro', $nameEstrutura, 's3');
                     } else {
                         $forro->foto_ultilizacao = 'SEM IMAGEM';
                     }
@@ -110,7 +110,7 @@ class forroController extends Controller
                     if ($request->file('txtFotoDeficienciaForro')->isValid()) {
                         // nomeando arquivo
                         $nameEstrutura = $request->txtLocalDeficienciaForro . '.' . $request->txtFotoDeficienciaForro->extension();
-                        $forro->foto_deficiencia = $request->file('txtFotoDeficienciaForro')->storeAs('revestimento/forro/txtFotoDeficienciaForro', $nameEstrutura);
+                        $forro->foto_deficiencia = $request->file('txtFotoDeficienciaForro')->storeAs('revestimento/forro/txtFotoDeficienciaForro', $nameEstrutura, 's3');
                     } else {
                         $forro->foto_deficiencia = 'SEM IMAGEM';
                     }
@@ -123,7 +123,7 @@ class forroController extends Controller
                     if ($request->file('txtFotoOutroForro')->isValid()) {
                         // nomeando arquivo
                         $nameEstrutura = $request->txtLocalOutroForro . '.' . $request->txtFotoDeficienciaForro->extension();
-                        $forro->foto_outros = $request->file('txtFotoOutroForro')->storeAs('revestimento/forro/txtFotoDeficienciaForro', $nameEstrutura);
+                        $forro->foto_outros = $request->file('txtFotoOutroForro')->storeAs('revestimento/forro/txtFotoDeficienciaForro', $nameEstrutura, 's3');
                     } else {
                         $forro->foto_outros = 'SEM IMAGEM';
                     }

@@ -54,7 +54,7 @@ class pisoController extends Controller
                     if ($request->file('txtFotoFissuraPiso')->isValid()) {
                         // nomeando arquivo
                         $nameEstrutura = $request->txtLocalFissuraPiso . '.' . $request->txtFotoFissuraPiso->extension();
-                        $piso->foto_fissura = $request->file('txtFotoFissuraPiso')->storeAs('revestimento/piso/txtFotoFissuraPiso', $nameEstrutura);
+                        $piso->foto_fissura = $request->file('txtFotoFissuraPiso')->storeAs('revestimento/piso/txtFotoFissuraPiso', $nameEstrutura, 's3');
                     } else {
                         $piso->foto_fissura = 'SEM IMAGEM';
                     }
@@ -68,7 +68,7 @@ class pisoController extends Controller
                     if ($request->file('txtFotoFaltaPiso')->isValid()) {
                         // nomeando arquivo
                         $nameEstrutura = $request->txtLocalFaltaPiso . '.' . $request->txtFotoFaltaPiso->extension();
-                        $piso->foto_deficiencia_juntas = $request->file('txtFotoFissuraPiso')->storeAs('revestimento/piso/txtFotoFaltaPiso', $nameEstrutura);
+                        $piso->foto_deficiencia_juntas = $request->file('txtFotoFissuraPiso')->storeAs('revestimento/piso/txtFotoFaltaPiso', $nameEstrutura, 's3');
                     } else {
                         $piso->foto_deficiencia_juntas = 'SEM IMAGEM';
                     }
@@ -82,7 +82,7 @@ class pisoController extends Controller
                     if ($request->file('txtFotoDestacamentoPiso')->isValid()) {
                         // nomeando arquivo
                         $nameEstrutura = $request->local_destacamento . '.' . $request->txtFotoDestacamentoPiso->extension();
-                        $piso->foto_destacamento = $request->file('txtFotoDestacamentoPiso')->storeAs('revestimento/piso/txtFotoDestacamentoPiso', $nameEstrutura);
+                        $piso->foto_destacamento = $request->file('txtFotoDestacamentoPiso')->storeAs('revestimento/piso/txtFotoDestacamentoPiso', $nameEstrutura, 's3');
                     } else {
                         $piso->foto_destacamento = 'SEM IMAGEM';
                     }
@@ -96,7 +96,7 @@ class pisoController extends Controller
                     if ($request->file('txtFotoCaimentoPiso')->isValid()) {
                         // nomeando arquivo
                         $nameEstrutura = $request->txtLocalCaimentoPiso . '.' . $request->txtFotoCaimentoPiso->extension();
-                        $piso->foto_caimento = $request->file('txtFotoCaimentoPiso')->storeAs('revestimento/piso/txtFotoCaimentoPiso', $nameEstrutura);
+                        $piso->foto_caimento = $request->file('txtFotoCaimentoPiso')->storeAs('revestimento/piso/txtFotoCaimentoPiso', $nameEstrutura, 's3');
                     } else {
                         $piso->foto_caimento = 'SEM IMAGEM';
                     }
@@ -110,7 +110,7 @@ class pisoController extends Controller
                     if ($request->file('txtFotoEscadasPiso')->isValid()) {
                         // nomeando arquivo
                         $nameEstrutura = $request->txtLocalEscadasPiso . '.' . $request->txtFotoCaimentoPiso->extension();
-                        $piso->foto_escadas_sem_protecao = $request->file('txtFotoEscadasPiso')->storeAs('revestimento/piso/txtFotoEscadasPiso', $nameEstrutura);
+                        $piso->foto_escadas_sem_protecao = $request->file('txtFotoEscadasPiso')->storeAs('revestimento/piso/txtFotoEscadasPiso', $nameEstrutura, 's3');
                     } else {
                         $piso->foto_escadas_sem_protecao = 'SEM IMAGEM';
                     }
@@ -124,7 +124,7 @@ class pisoController extends Controller
                     if ($request->file('txtFotoManchasPiso')->isValid()) {
                         // nomeando arquivo
                         $nameEstrutura = $request->txtLocalManchasPiso . '.' . $request->txtFotoManchasPiso->extension();
-                        $piso->foto_manchas = $request->file('txtFotoManchasPiso')->storeAs('revestimento/piso/txtFotoManchasPiso', $nameEstrutura);
+                        $piso->foto_manchas = $request->file('txtFotoManchasPiso')->storeAs('revestimento/piso/txtFotoManchasPiso', $nameEstrutura, 's3');
                     } else {
                         $piso->foto_manchas = 'SEM IMAGEM';
                     }
@@ -138,7 +138,7 @@ class pisoController extends Controller
                     if ($request->file('txtFotoAbatimentoPiso')->isValid()) {
                         // nomeando arquivo
                         $nameEstrutura = $request->txtLocalAbatimentoPiso . '.' . $request->txtFotoAbatimentoPiso->extension();
-                        $piso->foto_abatimento = $request->file('txtFotoAbatimentoPiso')->storeAs('revestimento/piso/txtFotoAbatimentoPiso', $nameEstrutura);
+                        $piso->foto_abatimento = $request->file('txtFotoAbatimentoPiso')->storeAs('revestimento/piso/txtFotoAbatimentoPiso', $nameEstrutura, 's3');
                     } else {
                         $piso->foto_abatimento = 'SEM IMAGEM';
                     }
@@ -152,7 +152,7 @@ class pisoController extends Controller
                     if ($request->file('txtFotoSomPiso')->isValid()) {
                         // nomeando arquivo
                         $nameEstrutura = $request->txtLocalSomPiso . '.' . $request->txtFotoSomPiso->extension();
-                        $piso->foto_som = $request->file('txtFotoSomPiso')->storeAs('revestimento/piso/txtFotoSomPiso', $nameEstrutura);
+                        $piso->foto_som = $request->file('txtFotoSomPiso')->storeAs('revestimento/piso/txtFotoSomPiso', $nameEstrutura, 's3');
                     } else {
                         $piso->foto_som = 'SEM IMAGEM';
                     }
@@ -166,7 +166,7 @@ class pisoController extends Controller
                     if ($request->file('txtFotoOutroPiso')->isValid()) {
                         // nomeando arquivo
                         $nameEstrutura = $request->txtLocalOutroPiso . '.' . $request->txtFotoSomPiso->extension();
-                        $piso->foto_outros = $request->file('txtFotoOutroPiso')->storeAs('revestimento/piso/txtFotoOutroPiso', $nameEstrutura);
+                        $piso->foto_outros = $request->file('txtFotoOutroPiso')->storeAs('revestimento/piso/txtFotoOutroPiso', $nameEstrutura, 's3');
                     } else {
                         $piso->foto_outros = 'SEM IMAGEM';
                     }

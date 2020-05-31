@@ -57,7 +57,7 @@ class fachadaController extends Controller
                     if ($request->file('txtFotoFissuraFachada')->isValid()) {
                         // nomeando arquivo
                         $nameEstrutura = $request->txtLocalFissuraFachada . '.' . $request->txtFotoFissuraFachada->extension();
-                        $fachada->foto_fissura = $request->file('txtFotoFissuraFachada')->storeAs('revestimento/fachadas/txtFotoFissuraFachada', $nameEstrutura);
+                        $fachada->foto_fissura = $request->file('txtFotoFissuraFachada')->storeAs('revestimento/fachadas/txtFotoFissuraFachada', $nameEstrutura, 's3');
                     } else {
                         $fachada->foto_fissura = 'SEM IMAGEM';
                     }
@@ -71,7 +71,7 @@ class fachadaController extends Controller
                     if ($request->file('txtFotoDestacamentoFachada')->isValid()) {
                         // nomeando arquivo
                         $nameEstrutura = $request->txtLocalDestacamentoFachada . '.' . $request->txtFotoDestacamentoFachada->extension();
-                        $fachada->foto_destacamento = $request->file('txtFotoDestacamentoFachada')->storeAs('revestimento/fachadas/txtFotoDestacamentoFachada', $nameEstrutura);
+                        $fachada->foto_destacamento = $request->file('txtFotoDestacamentoFachada')->storeAs('revestimento/fachadas/txtFotoDestacamentoFachada', $nameEstrutura, 's3');
                     } else {
                         $fachada->foto_destacamento = 'SEM IMAGEM';
                     }
@@ -85,7 +85,7 @@ class fachadaController extends Controller
                     if ($request->file('txtFotoDescascamentoFachada')->isValid()) {
                         // nomeando arquivo
                         $nameEstrutura = $request->txtLocalDescascamentoFachada . '.' . $request->txtFotoDescascamentoFachada->extension();
-                        $fachada->foto_descascamento = $request->file('txtFotoDescascamentoFachada')->storeAs('revestimento/fachadas/txtFotoDescascamentoFachada', $nameEstrutura);
+                        $fachada->foto_descascamento = $request->file('txtFotoDescascamentoFachada')->storeAs('revestimento/fachadas/txtFotoDescascamentoFachada', $nameEstrutura, 's3');
                     } else {
                         $fachada->foto_descascamento = 'SEM IMAGEM';
                     }
@@ -99,7 +99,7 @@ class fachadaController extends Controller
                     if ($request->file('txtFotoEflorescenciaFachada')->isValid()) {
                         // nomeando arquivo
                         $nameEstrutura = $request->txtLocalEflorescenciaFachada . '.' . $request->txtFotoEflorescenciaFachada->extension();
-                        $fachada->foto_eflorecencia = $request->file('txtFotoEflorescenciaFachada')->storeAs('revestimento/fachadas/txtFotoEflorescenciaFachada', $nameEstrutura);
+                        $fachada->foto_eflorecencia = $request->file('txtFotoEflorescenciaFachada')->storeAs('revestimento/fachadas/txtFotoEflorescenciaFachada', $nameEstrutura, 's3');
                     } else {
                         $fachada->foto_eflorecencia = 'SEM IMAGEM';
                     }
@@ -113,7 +113,7 @@ class fachadaController extends Controller
                     if ($request->file('txtFotoFaltaFachada')->isValid()) {
                         // nomeando arquivo
                         $nameEstrutura = $request->txtLocalFaltaFachada . '.' . $request->txtFotoFaltaFachada->extension();
-                        $fachada->foto_falta_deficiencia = $request->file('txtFotoFaltaFachada')->storeAs('revestimento/fachadas/txtFotoFaltaFachada', $nameEstrutura);
+                        $fachada->foto_falta_deficiencia = $request->file('txtFotoFaltaFachada')->storeAs('revestimento/fachadas/txtFotoFaltaFachada', $nameEstrutura, 's3');
                     } else {
                         $fachada->foto_falta_deficiencia = 'SEM IMAGEM';
                     }
@@ -127,7 +127,7 @@ class fachadaController extends Controller
                     if ($request->file('txtFotoDeficienciaFachada')->isValid()) {
                         // nomeando arquivo
                         $nameEstrutura = $request->txtLocalDeficienciaFachada . '.' . $request->txtFotoDeficienciaFachada->extension();
-                        $fachada->foto_falta_pintura = $request->file('txtFotoDeficienciaFachada')->storeAs('revestimento/fachadas/txtFotoDeficienciaFachada', $nameEstrutura);
+                        $fachada->foto_falta_pintura = $request->file('txtFotoDeficienciaFachada')->storeAs('revestimento/fachadas/txtFotoDeficienciaFachada', $nameEstrutura, 's3');
                     } else {
                         $fachada->foto_falta_pintura = 'SEM IMAGEM';
                     }
@@ -141,7 +141,7 @@ class fachadaController extends Controller
                     if ($request->file('txtFotoDesgasteFachada')->isValid()) {
                         // nomeando arquivo
                         $nameEstrutura = $request->txtLocalDesgasteFachada . '.' . $request->txtFotoDesgasteFachada->extension();
-                        $fachada->foto_desgaste = $request->file('txtFotoDesgasteFachada')->storeAs('revestimento/fachadas/txtFotoDesgasteFachada', $nameEstrutura);
+                        $fachada->foto_desgaste = $request->file('txtFotoDesgasteFachada')->storeAs('revestimento/fachadas/txtFotoDesgasteFachada', $nameEstrutura, 's3');
                     } else {
                         $fachada->foto_desgaste = 'SEM IMAGEM';
                     }
@@ -155,7 +155,7 @@ class fachadaController extends Controller
                     if ($request->file('txtFotoAtaqueFachada')->isValid()) {
                         // nomeando arquivo
                         $nameEstrutura = $request->txtLocalAtaqueFachada . '.' . $request->txtFotoAtaqueFachada->extension();
-                        $fachada->foto_praga = $request->file('txtFotoAtaqueFachada')->storeAs('revestimento/fachadas/txtFotoAtaqueFachada', $nameEstrutura);
+                        $fachada->foto_praga = $request->file('txtFotoAtaqueFachada')->storeAs('revestimento/fachadas/txtFotoAtaqueFachada', $nameEstrutura, 's3');
                     } else {
                         $fachada->foto_praga = 'SEM IMAGEM';
                     }
@@ -169,7 +169,7 @@ class fachadaController extends Controller
                     if ($request->file('txtFotoVidrosFachada')->isValid()) {
                         // nomeando arquivo
                         $nameEstrutura = $request->txtLocalVidrosFachada . '.' . $request->txtFotoVidrosFachada->extension();
-                        $fachada->foto_vidros = $request->file('txtFotoVidrosFachada')->storeAs('revestimento/fachadas/txtFotoVidrosFachada', $nameEstrutura);
+                        $fachada->foto_vidros = $request->file('txtFotoVidrosFachada')->storeAs('revestimento/fachadas/txtFotoVidrosFachada', $nameEstrutura, 's3');
                     } else {
                         $fachada->foto_vidros = 'SEM IMAGEM';
                     }
@@ -183,7 +183,7 @@ class fachadaController extends Controller
                     if ($request->file('txtFotoRompimentoFachada')->isValid()) {
                         // nomeando arquivo
                         $nameEstrutura = $request->txtLocalRompimentoFachada . '.' . $request->txtFotoRompimentoFachada->extension();
-                        $fachada->foto_rompimento = $request->file('txtFotoRompimentoFachada')->storeAs('revestimento/fachadas/txtFotoRompimentoFachada', $nameEstrutura);
+                        $fachada->foto_rompimento = $request->file('txtFotoRompimentoFachada')->storeAs('revestimento/fachadas/txtFotoRompimentoFachada', $nameEstrutura, 's3');
                     } else {
                         $fachada->foto_rompimento = 'SEM IMAGEM';
                     }
@@ -197,7 +197,7 @@ class fachadaController extends Controller
                     if ($request->file('txtFotoCaixaFachada')->isValid()) {
                         // nomeando arquivo
                         $nameEstrutura = $request->txtLocalCaixaFachada . '.' . $request->txtFotoCaixaFachada->extension();
-                        $fachada->foto_caixa = $request->file('txtFotoCaixaFachada')->storeAs('revestimento/fachadas/txtFotoCaixaFachada', $nameEstrutura);
+                        $fachada->foto_caixa = $request->file('txtFotoCaixaFachada')->storeAs('revestimento/fachadas/txtFotoCaixaFachada', $nameEstrutura, 's3');
                     } else {
                         $fachada->foto_caixa = 'SEM IMAGEM';
                     }
@@ -211,7 +211,7 @@ class fachadaController extends Controller
                     if ($request->file('txtFotoOutroFachada')->isValid()) {
                         // nomeando arquivo
                         $nameEstrutura = $request->txtLocalOutroFachada . '.' . $request->txtFotoOutroFachada->extension();
-                        $fachada->foto_outro = $request->file('txtFotoOutroFachada')->storeAs('revestimento/fachadas/txtFotoOutroFachada', $nameEstrutura);
+                        $fachada->foto_outro = $request->file('txtFotoOutroFachada')->storeAs('revestimento/fachadas/txtFotoOutroFachada', $nameEstrutura, 's3');
                     } else {
                         $fachada->foto_outro = 'SEM IMAGEM';
                     }

@@ -815,7 +815,7 @@
 
                 <!-- Piso -->
                 <div class="container-fluid">
-               
+
                     @if(isset($inspecao['fachada']))
                     <div class="text-left my-2">
                         <button type="button" class="btn bg-success text-white btn-lg btn-block" data-toggle="collapse" data-target="#form-fachada" aria-expanded="true" aria-controls="form-fachada">fachada.</button>

@@ -51,7 +51,7 @@ class fundacoesController extends Controller
                     if ($request->file('fotoErosao')->isValid()) {
                         // nomeando arquivo
                         $nameEstrutura = $request->localErosao . '.' . $request->fotoErosao->extension();
-                        $fundacao->foto_erosao_solo = $request->file('fotoErosao')->storeAs('fundacao/fotoErosao', $nameEstrutura);
+                        $fundacao->foto_erosao_solo = $request->file('fotoErosao')->storeAs('fundacao/fotoErosao', $nameEstrutura, 's3');
                     } else {
                         $fundacao->foto_erosao_solo = 'SEM IMAGEM';
                     }
@@ -64,7 +64,7 @@ class fundacoesController extends Controller
                     if ($request->file('fotoRecalque')->isValid()) {
                         // nomeando arquivo
                         $nameEstrutura = $request->localRecalque . '.' . $request->fotoRecalque->extension();
-                        $fundacao->foto_recalque_diferencial = $request->file('fotoRecalque')->storeAs('fundacao/fotoRecalque', $nameEstrutura);
+                        $fundacao->foto_recalque_diferencial = $request->file('fotoRecalque')->storeAs('fundacao/fotoRecalque', $nameEstrutura , 's3');
                     } else {
                         $fundacao->foto_recalque_diferencial = 'SEM IMAGEM';
                     }
@@ -77,7 +77,7 @@ class fundacoesController extends Controller
                     if ($request->file('fotoOutro')->isValid()) {
                         // nomeando arquivo
                         $nameEstrutura = $request->localRecalque . '.' . $request->fotoOutro->extension();
-                        $fundacao->foto_outro = $request->file('fotoOutro')->storeAs('fundacao/fotoOutro', $nameEstrutura);
+                        $fundacao->foto_outro = $request->file('fotoOutro')->storeAs('fundacao/fotoOutro', $nameEstrutura , 's3');
                     } else {
                         $fundacao->foto_outro = 'SEM IMAGEM';
                     }

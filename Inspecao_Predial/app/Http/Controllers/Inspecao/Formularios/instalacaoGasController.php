@@ -52,7 +52,7 @@ class instalacaoGasController extends Controller
                     if ($request->file('txtFotoVazamentoGas')->isValid()) {
                         // nomeando arquivo
                         $nameEstrutura = $request->txtLocalVazamentoGas . '.' . $request->txtFotoVazamentoGas->extension();
-                        $instal_gas->foto_vazamentos = $request->file('txtFotoVazamentoGas')->storeAs('InstalacaoGas/txtFotoVazamentoGas', $nameEstrutura);
+                        $instal_gas->foto_vazamentos = $request->file('txtFotoVazamentoGas')->storeAs('InstalacaoGas/txtFotoVazamentoGas', $nameEstrutura, 's3');
                     } else {
                         $instal_gas->foto_vazamentos = 'SEM IMAGEM';
                     }
@@ -65,7 +65,7 @@ class instalacaoGasController extends Controller
                     if ($request->file('txtFotoDeterioracaoGas')->isValid()) {
                         // nomeando arquivo
                         $nameEstrutura = $request->txtLocalDeterioracaoGas . '.' . $request->txtFotoDeterioracaoGas->extension();
-                        $instal_gas->foto_deterioracao = $request->file('txtFotoDeterioracaoGas')->storeAs('InstalacaoGas/txtFotoDeterioracaoGas', $nameEstrutura);
+                        $instal_gas->foto_deterioracao = $request->file('txtFotoDeterioracaoGas')->storeAs('InstalacaoGas/txtFotoDeterioracaoGas', $nameEstrutura, 's3');
                     } else {
                         $instal_gas->foto_deterioracao = 'SEM IMAGEM';
                     }
@@ -78,7 +78,7 @@ class instalacaoGasController extends Controller
                     if ($request->file('txtFotoPinturaGas')->isValid()) {
                         // nomeando arquivo
                         $nameEstrutura = $request->txtLocalPinturaGas . '.' . $request->txtFotoPinturaGas->extension();
-                        $instal_gas->foto_nConformidadeP = $request->file('txtFotoPinturaGas')->storeAs('InstalacaoGas/txtFotoPinturaGas', $nameEstrutura);
+                        $instal_gas->foto_nConformidadeP = $request->file('txtFotoPinturaGas')->storeAs('InstalacaoGas/txtFotoPinturaGas', $nameEstrutura, 's3');
                     } else {
                         $instal_gas->foto_nConformidadeP = 'SEM IMAGEM';
                     }
@@ -91,7 +91,7 @@ class instalacaoGasController extends Controller
                     if ($request->file('txtFotoDimensoesGas')->isValid()) {
                         // nomeando arquivo
                         $nameEstrutura = $request->txtLocalDimensoesGas . '.' . $request->txtFotoDimensoesGas->extension();
-                        $instal_gas->foto_nConformidadeD = $request->file('txtFotoDimensoesGas')->storeAs('InstalacaoGas/txtFotoDimensoesGas', $nameEstrutura);
+                        $instal_gas->foto_nConformidadeD = $request->file('txtFotoDimensoesGas')->storeAs('InstalacaoGas/txtFotoDimensoesGas', $nameEstrutura, 's3');
                     } else {
                         $instal_gas->foto_nConformidadeD = 'SEM IMAGEM';
                     }
@@ -104,7 +104,7 @@ class instalacaoGasController extends Controller
                     if ($request->file('txtFotoFaltaGas')->isValid()) {
                         // nomeando arquivo
                         $nameEstrutura = $request->txtLocalFaltaGas . '.' . $request->txtFotoFaltaGas->extension();
-                        $instal_gas->foto_fAbertura = $request->file('txtFotoFaltaGas')->storeAs('InstalacaoGas/txtFotoFaltaGas', $nameEstrutura);
+                        $instal_gas->foto_fAbertura = $request->file('txtFotoFaltaGas')->storeAs('InstalacaoGas/txtFotoFaltaGas', $nameEstrutura, 's3');
                     } else {
                         $instal_gas->foto_fAbertura = 'SEM IMAGEM';
                     }
@@ -117,7 +117,7 @@ class instalacaoGasController extends Controller
                     if ($request->file('txtFotoAberturaGas')->isValid()) {
                         // nomeando arquivo
                         $nameEstrutura = $request->txtLocalAberturaGas . '.' . $request->txtFotoAberturaGas->extension();
-                        $instal_gas->foto_abertura = $request->file('txtFotoAberturaGas')->storeAs('InstalacaoGas/txtFotoAberturaGas', $nameEstrutura);
+                        $instal_gas->foto_abertura = $request->file('txtFotoAberturaGas')->storeAs('InstalacaoGas/txtFotoAberturaGas', $nameEstrutura, 's3');
                     } else {
                         $instal_gas->foto_abertura = 'SEM IMAGEM';
                     }
@@ -130,7 +130,7 @@ class instalacaoGasController extends Controller
                     if ($request->file('txtFotoSinalizacaoGas')->isValid()) {
                         // nomeando arquivo
                         $nameEstrutura = $request->txtLocalSinalizacaoGas . '.' . $request->txtFotoSinalizacaoGas->extension();
-                        $instal_gas->foto_faltaS = $request->file('txtFotoSinalizacaoGas')->storeAs('InstalacaoGas/txtFotoSinalizacaoGas', $nameEstrutura);
+                        $instal_gas->foto_faltaS = $request->file('txtFotoSinalizacaoGas')->storeAs('InstalacaoGas/txtFotoSinalizacaoGas', $nameEstrutura, 's3');
                     } else {
                         $instal_gas->foto_faltaS = 'SEM IMAGEM';
                     }
@@ -143,7 +143,7 @@ class instalacaoGasController extends Controller
                     if ($request->file('txtFotoOutroGas')->isValid()) {
                         // nomeando arquivo
                         $nameEstrutura = $request->txtLocalOutroGas . '.' . $request->txtFotoOutroGas->extension();
-                        $instal_gas->foto_outro = $request->file('txtFotoOutroGas')->storeAs('InstalacaoGas/txtFotoOutroGas', $nameEstrutura);
+                        $instal_gas->foto_outro = $request->file('txtFotoOutroGas')->storeAs('InstalacaoGas/txtFotoOutroGas', $nameEstrutura, 's3');
                     } else {
                         $instal_gas->foto_outro = 'SEM IMAGEM';
                     }

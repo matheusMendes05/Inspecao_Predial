@@ -51,7 +51,7 @@ class impermeabilizacaoController extends Controller
                     if ($request->file('txtFotoInfiltracaoImpermeabilizacao')->isValid()) {
                         // nomeando arquivo
                         $nameEstrutura = $request->txtLocalInfiltracaoImpermeabilizacao . '.' . $request->txtFotoInfiltracaoImpermeabilizacao->extension();
-                        $impermeabilizacao->foto_infiltracao = $request->file('txtFotoInfiltracaoImpermeabilizacao')->storeAs('Impermeabilizacao/txtFotoInfiltracaoImpermeabilizacao', $nameEstrutura);
+                        $impermeabilizacao->foto_infiltracao = $request->file('txtFotoInfiltracaoImpermeabilizacao')->storeAs('Impermeabilizacao/InfiltracaoImpermeabilizacao', $nameEstrutura, 's3');
                     } else {
                         $impermeabilizacao->foto_infiltracao = 'SEM IMAGEM';
                     }
@@ -64,7 +64,7 @@ class impermeabilizacaoController extends Controller
                     if ($request->file('txtFotoDescolamentoImpermeabilizacao')->isValid()) {
                         // nomeando arquivo
                         $nameEstrutura = $request->txtLocalDescolamentoImpermeabilizacao . '.' . $request->txtFotoDescolamentoImpermeabilizacao->extension();
-                        $impermeabilizacao->foto_deslocamento = $request->file('txtFotoDescolamentoImpermeabilizacao')->storeAs('Impermeabilizacao/txtFotoDescolamentoImpermeabilizacao', $nameEstrutura);
+                        $impermeabilizacao->foto_deslocamento = $request->file('txtFotoDescolamentoImpermeabilizacao')->storeAs('Impermeabilizacao/DescolamentoImpermeabilizacao', $nameEstrutura, 's3');
                     } else {
                         $impermeabilizacao->foto_deslocamento = 'SEM IMAGEM';
                     }
@@ -77,7 +77,7 @@ class impermeabilizacaoController extends Controller
                     if ($request->file('txtFotoSistemaImpermeabilizacao')->isValid()) {
                         // nomeando arquivo
                         $nameEstrutura = $request->txtLocalSistemaImpermeabilizacao . '.' . $request->txtFotoSistemaImpermeabilizacao->extension();
-                        $impermeabilizacao->foto_sistema = $request->file('txtFotoSistemaImpermeabilizacao')->storeAs('Impermeabilizacao/txtFotoSistemaImpermeabilizacao', $nameEstrutura);
+                        $impermeabilizacao->foto_sistema = $request->file('txtFotoSistemaImpermeabilizacao')->storeAs('Impermeabilizacao/SistemaImpermeabilizacao', $nameEstrutura, 's3');
                     } else {
                         $impermeabilizacao->foto_sistema = 'SEM IMAGEM';
                     }
@@ -90,7 +90,7 @@ class impermeabilizacaoController extends Controller
                     if ($request->file('txtRessecamentoImpermeabilizacao')->isValid()) {
                         // nomeando arquivo
                         $nameEstrutura = $request->txtLocalRessecamentoImpermeabilizacao . '.' . $request->txtRessecamentoImpermeabilizacao->extension();
-                        $impermeabilizacao->foto_ressecamento = $request->file('txtRessecamentoImpermeabilizacao')->storeAs('Impermeabilizacao/txtRessecamentoImpermeabilizacao', $nameEstrutura);
+                        $impermeabilizacao->foto_ressecamento = $request->file('txtRessecamentoImpermeabilizacao')->storeAs('Impermeabilizacao/RessecamentoImpermeabilizacao', $nameEstrutura, 's3');
                     } else {
                         $impermeabilizacao->foto_ressecamento = 'SEM IMAGEM';
                     }
@@ -103,7 +103,7 @@ class impermeabilizacaoController extends Controller
                     if ($request->file('txtFotoFaltaImpermeabilizacao')->isValid()) {
                         // nomeando arquivo
                         $nameEstrutura = $request->txtLocalFaltaImpermeabilizacao . '.' . $request->txtFotoFaltaImpermeabilizacao->extension();
-                        $impermeabilizacao->foto_falta_junta = $request->file('txtFotoFaltaImpermeabilizacao')->storeAs('Impermeabilizacao/txtFotoFaltaImpermeabilizacao', $nameEstrutura);
+                        $impermeabilizacao->foto_falta_junta = $request->file('txtFotoFaltaImpermeabilizacao')->storeAs('Impermeabilizacao/FaltaImpermeabilizacao', $nameEstrutura, 's3');
                     } else {
                         $impermeabilizacao->foto_falta_junta = 'SEM IMAGEM';
                     }
@@ -116,7 +116,7 @@ class impermeabilizacaoController extends Controller
                     if ($request->file('txtFotoCaimentoImpermeabilizacao')->isValid()) {
                         // nomeando arquivo
                         $nameEstrutura = $request->txtLocalCaimentoImpermeabilizacao . '.' . $request->txtFotoCaimentoImpermeabilizacao->extension();
-                        $impermeabilizacao->foto_falta_caimento = $request->file('txtFotoCaimentoImpermeabilizacao')->storeAs('Impermeabilizacao/txtFotoCaimentoImpermeabilizacao', $nameEstrutura);
+                        $impermeabilizacao->foto_falta_caimento = $request->file('txtFotoCaimentoImpermeabilizacao')->storeAs('Impermeabilizacao/CaimentoImpermeabilizacao', $nameEstrutura, 's3');
                     } else {
                         $impermeabilizacao->foto_falta_caimento = 'SEM IMAGEM';
                     }
@@ -129,7 +129,7 @@ class impermeabilizacaoController extends Controller
                     if ($request->file('txtFotoTetoImpermeabilizacao')->isValid()) {
                         // nomeando arquivo
                         $nameEstrutura = $request->txtLocalTetoImpermeabilizacao . '.' . $request->txtFotoTetoImpermeabilizacao->extension();
-                        $impermeabilizacao->foto_falta_imper = $request->file('txtFotoTetoImpermeabilizacao')->storeAs('Impermeabilizacao/txtFotoTetoImpermeabilizacao', $nameEstrutura);
+                        $impermeabilizacao->foto_falta_imper = $request->file('txtFotoTetoImpermeabilizacao')->storeAs('Impermeabilizacao/TetoImpermeabilizacao', $nameEstrutura, 's3');
                     } else {
                         $impermeabilizacao->foto_falta_imper = 'SEM IMAGEM';
                     }
@@ -142,7 +142,7 @@ class impermeabilizacaoController extends Controller
                     if ($request->file('txtFotoOutroImpermeabilizacao')->isValid()) {
                         // nomeando arquivo
                         $nameEstrutura = $request->txtLocalOutroImpermeabilizacao . '.' . $request->txtFotoOutroImpermeabilizacao->extension();
-                        $impermeabilizacao->foto_outro = $request->file('txtFotoOutroImpermeabilizacao')->storeAs('Impermeabilizacao/txtFotoOutroImpermeabilizacao', $nameEstrutura);
+                        $impermeabilizacao->foto_outro = $request->file('txtFotoOutroImpermeabilizacao')->storeAs('Impermeabilizacao/OutroImpermeabilizacao', $nameEstrutura, 's3');
                     } else {
                         $impermeabilizacao->foto_outro = 'SEM IMAGEM';
                     }

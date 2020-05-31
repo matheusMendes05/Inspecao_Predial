@@ -51,7 +51,7 @@ class vedacaoController extends Controller
                     if ($request->file('fotoFissura')->isValid()) {
                         // nomeando arquivo
                         $nameEstrutura = $request->localFissura . '.' . $request->fotoFissura->extension();
-                        $vedacao->foto_fissura_trinca = $request->file('fotoFissura')->storeAs('vedacao/fotoFissura', $nameEstrutura);
+                        $vedacao->foto_fissura_trinca = $request->file('fotoFissura')->storeAs('vedacao/fotoFissura', $nameEstrutura, 's3');
                     } else {
                         $vedacao->foto_fissura_trinca = 'SEM IMAGEM';
                     }
@@ -65,7 +65,7 @@ class vedacaoController extends Controller
                     if ($request->file('fotoEflorescencia')->isValid()) {
                         // nomeando arquivo
                         $nameEstrutura = $request->localEflorescencia . '.' . $request->fotoEflorescencia->extension();
-                        $vedacao->foto_eflorescencia = $request->file('fotoEflorescencia')->storeAs('vedacao/fotoEflorescencia', $nameEstrutura);
+                        $vedacao->foto_eflorescencia = $request->file('fotoEflorescencia')->storeAs('vedacao/fotoEflorescencia', $nameEstrutura, 's3');
                     } else {
                         $vedacao->foto_eflorescencia = 'SEM IMAGEM';
                     }
@@ -79,7 +79,7 @@ class vedacaoController extends Controller
                     if ($request->file('fotoInfiltracao')->isValid()) {
                         // nomeando arquivo
                         $nameEstrutura = $request->localInfiltracao . '.' . $request->fotoInfiltracao->extension();
-                        $vedacao->foto_infiltracao = $request->file('fotoInfiltracao')->storeAs('vedacao/fotoInfiltracao', $nameEstrutura);
+                        $vedacao->foto_infiltracao = $request->file('fotoInfiltracao')->storeAs('vedacao/fotoInfiltracao', $nameEstrutura, 's3');
                     } else {
                         $vedacao->foto_infiltracao = 'SEM IMAGEM';
                     }
@@ -92,7 +92,7 @@ class vedacaoController extends Controller
                     if ($request->file('fotoIrregularidades')->isValid()) {
                         // nomeando arquivo
                         $nameEstrutura = $request->localIrregularidades . '.' . $request->fotoIrregularidades->extension();
-                        $vedacao->foto_irregularidades_geometricas = $request->file('fotoIrregularidades')->storeAs('vedacao/fotoIrregularidades', $nameEstrutura);
+                        $vedacao->foto_irregularidades_geometricas = $request->file('fotoIrregularidades')->storeAs('vedacao/fotoIrregularidades', $nameEstrutura, 's3');
                     } else {
                         $vedacao->foto_irregularidades_geometricas = 'SEM IMAGEM';
                     }
@@ -105,7 +105,7 @@ class vedacaoController extends Controller
                     if ($request->file('fotoOutro')->isValid()) {
                         // nomeando arquivo
                         $nameEstrutura = $request->obsIrregularidades . '.' . $request->fotoOutro->extension();
-                        $vedacao->foto_outro = $request->file('fotoOutro')->storeAs('vedacao/fotoOutro', $nameEstrutura);
+                        $vedacao->foto_outro = $request->file('fotoOutro')->storeAs('vedacao/fotoOutro', $nameEstrutura, 's3');
                     } else {
                         $vedacao->foto_outro = 'SEM IMAGEM';
                     }

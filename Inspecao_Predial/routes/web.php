@@ -128,4 +128,8 @@ Route::group(['middleware' => 'auth'], function () {
     // teste formularios
     Route::get('/teste/formulario', 'Teste\testeController@create')->name('teste.create');
     Route::post('/teste/formulario/novo', 'Teste\testeController@store')->name('teste.store');
+
+    // teste Fotos AWS - S3
+    Route::get('/teste/upload-image', 'Teste\ImageController@create')->name('image.create');
+    Route::post('/teste/upload-image/new', 'Teste\ImageController@store')->name('image.store');
 });

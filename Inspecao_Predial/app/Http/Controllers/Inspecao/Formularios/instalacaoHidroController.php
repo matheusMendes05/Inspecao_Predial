@@ -51,7 +51,7 @@ class instalacaoHidroController extends Controller
                     if ($request->file('txtFotoVazamentoHidro')->isValid()) {
                         // nomeando arquivo
                         $nameEstrutura = $request->txtLocalVazamentoHidro . '.' . $request->txtFotoVazamentoHidro->extension();
-                        $hidro->foto_vazamento = $request->file('txtFotoVazamentoHidro')->storeAs('hidrossanitaria/txtFotoVazamentoHidro', $nameEstrutura);
+                        $hidro->foto_vazamento = $request->file('txtFotoVazamentoHidro')->storeAs('hidrossanitaria/txtFotoVazamentoHidro', $nameEstrutura, 's3');
                     } else {
                         $hidro->foto_vazamento = 'SEM IMAGEM';
                     }
@@ -64,7 +64,7 @@ class instalacaoHidroController extends Controller
                     if ($request->file('txtFotoDeterioracaoHidro')->isValid()) {
                         // nomeando arquivo
                         $nameEstrutura = $request->txtLocalDeterioracaoHidro . '.' . $request->txtFotoDeterioracaoHidro->extension();
-                        $hidro->foto_deterioracao = $request->file('txtFotoDeterioracaoHidro')->storeAs('hidrossanitaria/txtFotoDeterioracaoHidro', $nameEstrutura);
+                        $hidro->foto_deterioracao = $request->file('txtFotoDeterioracaoHidro')->storeAs('hidrossanitaria/txtFotoDeterioracaoHidro', $nameEstrutura, 's3');
                     } else {
                         $hidro->foto_deterioracao = 'SEM IMAGEM';
                     }
@@ -77,7 +77,7 @@ class instalacaoHidroController extends Controller
                     if ($request->file('txtFotoTampasHidro')->isValid()) {
                         // nomeando arquivo
                         $nameEstrutura = $request->txtLocalTampasHidro . '.' . $request->txtFotoTampasHidro->extension();
-                        $hidro->foto_tampas = $request->file('txtFotoTampasHidro')->storeAs('hidrossanitaria/txtFotoTampasHidro', $nameEstrutura);
+                        $hidro->foto_tampas = $request->file('txtFotoTampasHidro')->storeAs('hidrossanitaria/txtFotoTampasHidro', $nameEstrutura, 's3');
                     } else {
                         $hidro->foto_tampas = 'SEM IMAGEM';
                     }
@@ -90,7 +90,7 @@ class instalacaoHidroController extends Controller
                     if ($request->file('txtFotoPinturaHidro')->isValid()) {
                         // nomeando arquivo
                         $nameEstrutura = $request->txtLocalPinturaHidro . '.' . $request->txtFotoPinturaHidro->extension();
-                        $hidro->foto_nConformidade = $request->file('txtFotoPinturaHidro')->storeAs('hidrossanitaria/txtFotoPinturaHidro', $nameEstrutura);
+                        $hidro->foto_nConformidade = $request->file('txtFotoPinturaHidro')->storeAs('hidrossanitaria/txtFotoPinturaHidro', $nameEstrutura, 's3');
                     } else {
                         $hidro->foto_nConformidade = 'SEM IMAGEM';
                     }
@@ -103,7 +103,7 @@ class instalacaoHidroController extends Controller
                     if ($request->file('txtFotoFaltaHidro')->isValid()) {
                         // nomeando arquivo
                         $nameEstrutura = $request->txtLocalFaltaHidro . '.' . $request->txtFotoFaltaHidro->extension();
-                        $hidro->foto_faltaIdent = $request->file('txtFotoFaltaHidro')->storeAs('hidrossanitaria/txtFotoFaltaHidro', $nameEstrutura);
+                        $hidro->foto_faltaIdent = $request->file('txtFotoFaltaHidro')->storeAs('hidrossanitaria/txtFotoFaltaHidro', $nameEstrutura, 's3');
                     } else {
                         $hidro->foto_faltaIdent = 'SEM IMAGEM';
                     }
@@ -116,7 +116,7 @@ class instalacaoHidroController extends Controller
                     if ($request->file('txtFotoTubulacoesHidro')->isValid()) {
                         // nomeando arquivo
                         $nameEstrutura = $request->txtLocalTubulacoesHidro . '.' . $request->txtFotoTubulacoesHidro->extension();
-                        $hidro->foto_tubulacoes = $request->file('txtFotoTubulacoesHidro')->storeAs('hidrossanitaria/txtFotoTubulacoesHidro', $nameEstrutura);
+                        $hidro->foto_tubulacoes = $request->file('txtFotoTubulacoesHidro')->storeAs('hidrossanitaria/txtFotoTubulacoesHidro', $nameEstrutura, 's3');
                     } else {
                         $hidro->foto_tubulacoes = 'SEM IMAGEM';
                     }
@@ -129,7 +129,7 @@ class instalacaoHidroController extends Controller
                     if ($request->file('txtFotoEntupimentoHidro')->isValid()) {
                         // nomeando arquivo
                         $nameEstrutura = $request->txtLocalEntupimentoHidro . '.' . $request->txtFotoEntupimentoHidro->extension();
-                        $hidro->foto_entupimento = $request->file('txtFotoEntupimentoHidro')->storeAs('hidrossanitaria/txtFotoEntupimentoHidro', $nameEstrutura);
+                        $hidro->foto_entupimento = $request->file('txtFotoEntupimentoHidro')->storeAs('hidrossanitaria/txtFotoEntupimentoHidro', $nameEstrutura, 's3');
                     } else {
                         $hidro->foto_entupimento = 'SEM IMAGEM';
                     }
@@ -142,7 +142,7 @@ class instalacaoHidroController extends Controller
                     if ($request->file('txtFotoOutroHidro')->isValid()) {
                         // nomeando arquivo
                         $nameEstrutura = $request->txtLocalOutroHidro . '.' . $request->txtFotoOutroHidro->extension();
-                        $hidro->foto_outro = $request->file('txtFotoOutroHidro')->storeAs('hidrossanitaria/txtFotoOutroHidro', $nameEstrutura);
+                        $hidro->foto_outro = $request->file('txtFotoOutroHidro')->storeAs('hidrossanitaria/txtFotoOutroHidro', $nameEstrutura, 's3');
                     } else {
                         $hidro->foto_outro = 'SEM IMAGEM';
                     }

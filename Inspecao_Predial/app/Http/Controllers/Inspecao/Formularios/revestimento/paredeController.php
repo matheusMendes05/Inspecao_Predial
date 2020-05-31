@@ -52,7 +52,7 @@ class paredeController extends Controller
                     if ($request->file('txtFotoFissuraParede')->isValid()) {
                         // nomeando arquivo
                         $nameEstrutura = $request->txtLocalFissuraParede . '.' . $request->txtFotoFissuraParede->extension();
-                        $parede->foto_fissura = $request->file('txtFotoFissuraParede')->storeAs('revestimento/parede/txtFotoFissuraParede', $nameEstrutura);
+                        $parede->foto_fissura = $request->file('txtFotoFissuraParede')->storeAs('revestimento/parede/txtFotoFissuraParede', $nameEstrutura, 's3');
                     } else {
                         $parede->foto_fissura = 'SEM IMAGEM';
                     }
@@ -66,7 +66,7 @@ class paredeController extends Controller
                     if ($request->file('txtFotoDestacamentoParede')->isValid()) {
                         // nomeando arquivo
                         $nameEstrutura = $request->txtLocalDestacamentoParede . '.' . $request->txtFotoDestacamentoParede->extension();
-                        $parede->foto_destacamento = $request->file('txtFotoDestacamentoParede')->storeAs('revestimento/parede/txtFotoDestacamentoParede', $nameEstrutura);
+                        $parede->foto_destacamento = $request->file('txtFotoDestacamentoParede')->storeAs('revestimento/parede/txtFotoDestacamentoParede', $nameEstrutura, 's3');
                     } else {
                         $parede->foto_destacamento = 'SEM IMAGEM';
                     }
@@ -80,7 +80,7 @@ class paredeController extends Controller
                     if ($request->file('txtFotoInfiltracaoParede')->isValid()) {
                         // nomeando arquivo
                         $nameEstrutura = $request->txtLocalInfiltracaoParede . '.' . $request->txtFotoInfiltracaoParede->extension();
-                        $parede->foto_infiltracao = $request->file('txtFotoInfiltracaoParede')->storeAs('revestimento/parede/txtFotoInfiltracaoParede', $nameEstrutura);
+                        $parede->foto_infiltracao = $request->file('txtFotoInfiltracaoParede')->storeAs('revestimento/parede/txtFotoInfiltracaoParede', $nameEstrutura, 's3');
                     } else {
                         $parede->foto_infiltracao = 'SEM IMAGEM';
                     }
@@ -94,7 +94,7 @@ class paredeController extends Controller
                     if ($request->file('txtFotoEflorescenciaParede')->isValid()) {
                         // nomeando arquivo
                         $nameEstrutura = $request->txtLocalEflorescenciaParede . '.' . $request->txtFotoEflorescenciaParede->extension();
-                        $parede->foto_eflorecencia = $request->file('txtFotoEflorescenciaParede')->storeAs('revestimento/parede/txtFotoEflorescenciaParede', $nameEstrutura);
+                        $parede->foto_eflorecencia = $request->file('txtFotoEflorescenciaParede')->storeAs('revestimento/parede/txtFotoEflorescenciaParede', $nameEstrutura, 's3');
                     } else {
                         $parede->foto_eflorecencia = 'SEM IMAGEM';
                     }
@@ -108,7 +108,7 @@ class paredeController extends Controller
                     if ($request->file('txtFotoEflorescenciaParede')->isValid()) {
                         // nomeando arquivo
                         $nameEstrutura = $request->txtLocalFaltaParede . '.' . $request->txtFotoFaltaParede->extension();
-                        $parede->foto_deficiencia = $request->file('txtFotoFaltaParede')->storeAs('revestimento/parede/txtFotoFaltaParede', $nameEstrutura);
+                        $parede->foto_deficiencia = $request->file('txtFotoFaltaParede')->storeAs('revestimento/parede/txtFotoFaltaParede', $nameEstrutura, 's3');
                     } else {
                         $parede->foto_deficiencia = 'SEM IMAGEM';
                     }
@@ -122,7 +122,7 @@ class paredeController extends Controller
                     if ($request->file('txtFotoDescascamentoParede')->isValid()) {
                         // nomeando arquivo
                         $nameEstrutura = $request->txtLocalDescascamentoParede . '.' . $request->txtFotoDescascamentoParede->extension();
-                        $parede->foto_bolhas = $request->file('txtFotoDescascamentoParede')->storeAs('revestimento/parede/txtFotoDescascamentoParede', $nameEstrutura);
+                        $parede->foto_bolhas = $request->file('txtFotoDescascamentoParede')->storeAs('revestimento/parede/txtFotoDescascamentoParede', $nameEstrutura, 's3');
                     } else {
                         $parede->foto_bolhas = 'SEM IMAGEM';
                     }
@@ -136,7 +136,7 @@ class paredeController extends Controller
                     if ($request->file('txtFotoFalhaParede')->isValid()) {
                         // nomeando arquivo
                         $nameEstrutura = $request->txtLocalFalhaParede . '.' . $request->txtFotoFalhaParede->extension();
-                        $parede->foto_falha = $request->file('txtFotoFalhaParede')->storeAs('revestimento/parede/txtFotoFalhaParede', $nameEstrutura);
+                        $parede->foto_falha = $request->file('txtFotoFalhaParede')->storeAs('revestimento/parede/txtFotoFalhaParede', $nameEstrutura, 's3');
                     } else {
                         $parede->foto_falha = 'SEM IMAGEM';
                     }
@@ -150,7 +150,7 @@ class paredeController extends Controller
                     if ($request->file('txtFotoAberturaParede')->isValid()) {
                         // nomeando arquivo
                         $nameEstrutura = $request->txtLocalAberturaParede . '.' . $request->txtFotoAberturaParede->extension();
-                        $parede->foto_abertura = $request->file('txtFotoAberturaParede')->storeAs('revestimento/parede/txtFotoAberturaParede', $nameEstrutura);
+                        $parede->foto_abertura = $request->file('txtFotoAberturaParede')->storeAs('revestimento/parede/txtFotoAberturaParede', $nameEstrutura, 's3');
                     } else {
                         $parede->foto_abertura = 'SEM IMAGEM';
                     }
@@ -164,7 +164,7 @@ class paredeController extends Controller
                     if ($request->file('txtFotoSomParede')->isValid()) {
                         // nomeando arquivo
                         $nameEstrutura = $request->txtLocalSomParede . '.' . $request->txtFotoSomParede->extension();
-                        $parede->foto_som = $request->file('txtFotoSomParede')->storeAs('revestimento/parede/txtFotoSomParede', $nameEstrutura);
+                        $parede->foto_som = $request->file('txtFotoSomParede')->storeAs('revestimento/parede/txtFotoSomParede', $nameEstrutura, 's3');
                     } else {
                         $parede->foto_som = 'SEM IMAGEM';
                     }
@@ -178,7 +178,7 @@ class paredeController extends Controller
                     if ($request->file('txtFotoOutroParede')->isValid()) {
                         // nomeando arquivo
                         $nameEstrutura = $request->txtLocalOutroParede . '.' . $request->txtFotoOutroParede->extension();
-                        $parede->foto_outro = $request->file('txtFotoOutroParede')->storeAs('revestimento/parede/txtFotoOutroParede', $nameEstrutura);
+                        $parede->foto_outro = $request->file('txtFotoOutroParede')->storeAs('revestimento/parede/txtFotoOutroParede', $nameEstrutura, 's3');
                     } else {
                         $parede->foto_outro = 'SEM IMAGEM';
                     }

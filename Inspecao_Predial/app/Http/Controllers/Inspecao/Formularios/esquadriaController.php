@@ -55,11 +55,11 @@ class esquadriaController extends Controller
                     if ($request->file('txtFotoDeficienciaEsquadria')->isValid()) {
                         // nomeando arquivo
                         $nameEstrutura = $request->txtLocalDeficienciaEsquadria . '.' . $request->txtFotoDeficienciaEsquadria->extension();
-                        $esquadria->foto_deficiencia_pintura = $request->file('txtFotoDeficienciaEsquadria')->storeAs('revestimento/esquadria/txtFotoDeficienciaEsquadria', $nameEstrutura);
+                        $esquadria->foto_deficiencia_pintura = $request->file('txtFotoDeficienciaEsquadria')->storeAs('revestimento/esquadria/DeficienciaEsquadria', $nameEstrutura, 's3');
                     } else {
                         $esquadria->foto_deficiencia_pintura = 'SEM IMAGEM';
                     }
-                }
+                }, 's3'
                 $esquadria->obs_deficiencia_pintura = $request->txtObsDeficienciaEsquadria;
 
                 $esquadria->local_pragas = $request->txtLocalAtaqueEsquadria;
@@ -69,7 +69,7 @@ class esquadriaController extends Controller
                     if ($request->file('txtFotoAtaqueEsquadria')->isValid()) {
                         // nomeando arquivo
                         $nameEstrutura = $request->txtLocalAtaqueEsquadria . '.' . $request->txtFotoAtaqueEsquadria->extension();
-                        $esquadria->foto_pragas = $request->file('txtFotoAtaqueEsquadria')->storeAs('revestimento/esquadria/txtFotoAtaqueEsquadria', $nameEstrutura);
+                        $esquadria->foto_pragas = $request->file('txtFotoAtaqueEsquadria')->storeAs('revestimento/esquadria/AtaqueEsquadria', $nameEstrutura, 's3');
                     } else {
                         $esquadria->foto_pragas = 'SEM IMAGEM';
                     }
@@ -83,7 +83,7 @@ class esquadriaController extends Controller
                     if ($request->file('txtFotoPerdaEsquadria')->isValid()) {
                         // nomeando arquivo
                         $nameEstrutura = $request->txtLocalPerdaEsquadria . '.' . $request->txtFotoPerdaEsquadria->extension();
-                        $esquadria->foto_perda_mobilidade = $request->file('txtFotoPerdaEsquadria')->storeAs('revestimento/esquadria/txtFotoPerdaEsquadria', $nameEstrutura);
+                        $esquadria->foto_perda_mobilidade = $request->file('txtFotoPerdaEsquadria')->storeAs('revestimento/esquadria/PerdaEsquadria', $nameEstrutura, 's3');
                     } else {
                         $esquadria->foto_perda_mobilidade = 'SEM IMAGEM';
                     }
@@ -97,7 +97,7 @@ class esquadriaController extends Controller
                     if ($request->file('txtFotoFolgaEsquadria')->isValid()) {
                         // nomeando arquivo
                         $nameEstrutura = $request->txtLocalFolgaEsquadria . '.' . $request->txtFotoFolgaEsquadria->extension();
-                        $esquadria->foto_folga = $request->file('txtFotoFolgaEsquadria')->storeAs('revestimento/esquadria/txtFotoFolgaEsquadria', $nameEstrutura);
+                        $esquadria->foto_folga = $request->file('txtFotoFolgaEsquadria')->storeAs('revestimento/esquadria/FotoFolgaEsquadria', $nameEstrutura, 's3');
                     } else {
                         $esquadria->foto_folga = 'SEM IMAGEM';
                     }
@@ -111,7 +111,7 @@ class esquadriaController extends Controller
                     if ($request->file('txtFotoRompimentoEsquadria')->isValid()) {
                         // nomeando arquivo
                         $nameEstrutura = $request->txtLocalRompimentoEsquadria . '.' . $request->txtFotoRompimentoEsquadria->extension();
-                        $esquadria->foto_rompimento = $request->file('txtFotoRompimentoEsquadria')->storeAs('revestimento/esquadria/txtFotoRompimentoEsquadria', $nameEstrutura);
+                        $esquadria->foto_rompimento = $request->file('txtFotoRompimentoEsquadria')->storeAs('revestimento/esquadria/RompimentoEsquadria', $nameEstrutura, 's3');
                     } else {
                         $esquadria->foto_rompimento = 'SEM IMAGEM';
                     }
@@ -125,7 +125,7 @@ class esquadriaController extends Controller
                     if ($request->file('txtFotoComponentesEsquadria')->isValid()) {
                         // nomeando arquivo
                         $nameEstrutura = $request->txtLocalComponentesEsquadria . '.' . $request->txtFotoComponentesEsquadria->extension();
-                        $esquadria->foto_componentes = $request->file('txtFotoComponentesEsquadria')->storeAs('revestimento/esquadria/txtFotoComponentesEsquadria', $nameEstrutura);
+                        $esquadria->foto_componentes = $request->file('txtFotoComponentesEsquadria')->storeAs('revestimento/esquadria/ComponentesEsquadria', $nameEstrutura, 's3');
                     } else {
                         $esquadria->foto_componentes = 'SEM IMAGEM';
                     }
@@ -139,7 +139,7 @@ class esquadriaController extends Controller
                     if ($request->file('txtFotoOutroEsquadria')->isValid()) {
                         // nomeando arquivo
                         $nameEstrutura = $request->txtLocalOutroEsquadria . '.' . $request->txtFotoOutroEsquadria->extension();
-                        $esquadria->foto_outro = $request->file('txtFotoOutroEsquadria')->storeAs('revestimento/esquadria/txtFotoOutroEsquadria', $nameEstrutura);
+                        $esquadria->foto_outro = $request->file('txtFotoOutroEsquadria')->storeAs('revestimento/esquadria/OutroEsquadria', $nameEstrutura, 's3');
                     } else {
                         $esquadria->foto_outro = 'SEM IMAGEM';
                     }
