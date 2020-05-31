@@ -85,11 +85,18 @@ Route::group(['middleware' => 'auth'], function () {
 
     // Construtor de Formulario - o usuario seleciona os campos necessarios para a inspecao
     Route::post('/edificio/{id}/inspecionar/construtor-formulario', 'Inspecao\inspecaoController@store')->name('inspecao.store');
+
     // formularios
+    Route::post('/edificio/{id}/inspecionar/novo', 'Inspecao\inspecaoCreateController@store')->name('inspecaoCreate.store');
 
+    // historico inspecoes
+    Route::get('/edificio/{id}/inspecao/historico', 'Inspecao\inspecaoController@show')->name('inspecao.show');
 
+    // Verificar Inspecao
+    Route::get('/edificio/{id}/inspecao/{inspecao_id}', 'Inspecao\inspecaoController@index')->name('inspecao.index');
 
-
+    // excluir Inspecao
+    Route::delete('/edificio/inspecao/excluir/{inspecao_id}', 'Inspecao\inspecaoController@destroy')->name('inspecao.destroy');
 
 
 
@@ -115,4 +122,10 @@ Route::group(['middleware' => 'auth'], function () {
 
     // Gerar Arquivos PDF
     Route::get('/inspecao/{id}/verificar/gerar-arquivo-PDF', 'Actions\PDFController@show')->name('pdf.show');
+
+
+
+    // teste formularios
+    Route::get('/teste/formulario', 'Teste\testeController@create')->name('teste.create');
+    Route::post('/teste/formulario/novo', 'Teste\testeController@store')->name('teste.store');
 });

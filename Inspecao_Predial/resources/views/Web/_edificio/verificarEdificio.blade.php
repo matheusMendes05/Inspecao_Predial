@@ -11,6 +11,20 @@
     </div>
 </div>
 
+@if(isset($message))
+<div class="alert alert-success">
+    <p class="text-white">{{$message}}</p>
+</div>
+@endif
+
+@if($errors->all())
+@foreach($errors->all() as $error)
+<div class="alert alert-success">
+    {{$error}}
+</div>
+@endforeach
+@endif
+
 
 <div class="container">
     <div class=" my-4 p-2">
@@ -191,6 +205,15 @@
                     </div>
                 </div>
             </div>
+            <div class="col-12  border p-2 text-white bg-success">
+                <div class="text-center">
+                    <h6 class="text-white">
+                        Total de inspecões Realizadas: <span class="mr-3">{{count($inspecoes)}}</span>
+                        <a href="{{ route('inspecao.show',['id' => $edificio->id])}}"><button class="btn btn-outline-light"> verificar inspeções</button></a>
+                    </h6>
+                </div>
+            </div>
+
 
         </div>
 

@@ -9,7 +9,7 @@
         <hr class="my-2">
         <p>Bem Vindo: <span class="text-success font-weight-bolder">{{Auth::user()->email}}</span></p>
         <p class="lead">
-            <a class="btn btn-outline-success btn-lg" href="{{ route('forms.index') }}" role="button">Cadastrar Inspeção</a>
+            <a class="btn btn-outline-success btn-lg" href="{{ route('edificio.index') }}" role="button">Cadastrar Edificio</a>
         </p>
     </div>
 

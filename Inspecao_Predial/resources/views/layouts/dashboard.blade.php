@@ -32,7 +32,9 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
     <!-- Google API  -->
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA3WWENSVNnI9uD3-EAJeWg636OlX84syc&libraries=places" async defer></script>
+    <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA3WWENSVNnI9uD3-EAJeWg636OlX84syc&libraries=places" async defer></script> -->
+
+
 
 
 </head>
@@ -107,9 +109,9 @@
                                         <span class="pl-auto text-wrap item">Home</span></a>
                                 </li>
                                 <li class="list-group-item">
-                                    <a href="{{route('forms.index')}}" class="links">
-                                        <i class="fas fa-file-alt icon"></i>
-                                        <span class="pl-auto text-wrap item ">Formulario</span></a>
+                                    <a href="{{route('edificio.index')}}" class="links">
+                                        <i class="fa fa-building" aria-hidden="true"></i>
+                                        <span class="pl-auto text-wrap item ">Edificios</span></a>
                                 </li>
                                 <li class="list-group-item">
                                     <a href="{{route('user.edit',[Auth::user()->id])}}" class="links">
@@ -117,7 +119,7 @@
                                         <span class="pl-auto text-wrap item">Perfil</span></a>
                                 </li>
                                 <li class="list-group-item item">
-                                    <a href="{{route('inspection.history')}}" class="links">
+                                    <a href="{{route('edificio.historico')}}" class="links">
                                         <i class="fas fa-history icon" class="links"></i>
                                         <span class="pl-auto text-wrap item">Historico</span></a>
                                 </li>
@@ -156,11 +158,11 @@
 
     <!-- API google Maps -->
     <!-- Google API  -->
-    <script src="{{ url(mix('Web/js/getLocation.js'))}}"></script>
+    <!-- <script src="{{ url(mix('Web/js/getLocation.js'))}}"></script> -->
 
     <!-- API google Maps -->
     <!-- Google API  -->
-    <script src="{{ url(mix('Web/js/setLocation.js'))}}"></script>
+    <!-- <script src="{{ url(mix('Web/js/setLocation.js'))}}"></script> -->
 
 </body>
 

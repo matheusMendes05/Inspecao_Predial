@@ -25,4 +25,7 @@ mix.styles([
     .scripts([
         'resources/views/Web/js/getLocation.js'
     ], 'public/Web/js/getLocation.js')
+    .scripts([
+        'resources/views/Web/js/estruturas.js'
+    ], 'public/Web/js/estruturas.js')
     .version();

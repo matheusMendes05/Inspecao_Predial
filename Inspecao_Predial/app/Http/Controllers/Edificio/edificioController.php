@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Edificio;
 
 use App\Http\Controllers\Controller;
 use App\models\Edificio\edificio;
+use App\models\Inspecao\inspecao;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -114,11 +115,12 @@ class edificioController extends Controller
             $edificio = edificio::where('id', $id)->first();
 
             // objeto que verifica numero de inspecoes
-            $verificar_Inspecoes = null;
+            $verificar_Inspecoes = inspecao::where('edificio_id', $id)->get();
 
 
             return view('Web._edificio.verificarEdificio', [
-                'edificio' => $edificio
+                'edificio' => $edificio,
+                'inspecoes' => $verificar_Inspecoes
             ]);
         } else {
             return redirect()->route('home')->withInput()->withErrors('[ERRO] você precisa estar Autenticado.');

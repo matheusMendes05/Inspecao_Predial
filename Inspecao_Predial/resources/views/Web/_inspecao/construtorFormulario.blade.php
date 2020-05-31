@@ -121,7 +121,7 @@
                             <fieldset>
                                 <legend class="text-white bg-success col-md-8 col-sm-12 ">Revestimentos.</legend>
                                 <div class="form-check pretty p-switch  py-1">
-                                    <input class="form-check-input elemento" type="checkbox" value="guardaCorpo" id="guardaCorpo" name="guardaCorpo">
+                                    <input class="form-check-input elemento" type="checkbox" value="forro" id="guardaCorpo" name="forro">
                                     <div class="state p-success">
 
                                         <label class="form-check-label" for="defaultCheck1">
@@ -133,7 +133,7 @@
 
 
                                 <div class="form-check pretty p-switch  py-1">
-                                    <input class="form-check-input elemento" type="checkbox" value="barreiraVeiculos" id="barreiraVeiculos" name="barreiraVeiculos">
+                                    <input class="form-check-input elemento" type="checkbox" value="parede" id="parede" name="parede">
                                     <div class="state p-success">
 
                                         <label class="form-check-label" for="defaultCheck1">
@@ -144,7 +144,7 @@
 
 
                                 <div class="form-check pretty p-switch  py-1">
-                                    <input class="form-check-input elemento" type="checkbox" value="iluminacao" id="iluminacao" name="iluminacao">
+                                    <input class="form-check-input elemento" type="checkbox" value="piso" id="piso" name="piso">
                                     <div class="state p-success">
 
                                         <label class="form-check-label" for="defaultCheck1">
@@ -155,7 +155,7 @@
 
 
                                 <div class="form-check pretty p-switch  py-2">
-                                    <input class="form-check-input elemento" type="checkbox" value="sinalizacaoViaria" id="sinalizacaoViaria" name="sinalizacaoViaria">
+                                    <input class="form-check-input elemento" type="checkbox" value="fachada" id="fachada" name="fachada">
                                     <div class="state p-success">
 
                                         <label class="form-check-label" for="defaultCheck1">
@@ -166,7 +166,7 @@
 
 
                                 <div class="form-check pretty p-switch   py-1">
-                                    <input class="form-check-input elemento" type="checkbox" value="vandalismo" id="vandalismo" name="vandalismo">
+                                    <input class="form-check-input elemento" type="checkbox" value="esquadria" id="esquadria" name="esquadria">
                                     <div class="state p-success">
 
                                         <label class="form-check-label" for="defaultCheck1">
@@ -177,7 +177,7 @@
 
 
                                 <div class="form-check pretty p-switch   py-1">
-                                    <input class="form-check-input elemento" type="checkbox" value="tubulacao" id="tubulacao" name="tubulacao">
+                                    <input class="form-check-input elemento" type="checkbox" value="impermeabilizacao" id="impermeabilizacao" name="impermeabilizacao">
                                     <div class="state p-success">
 
                                         <label class="form-check-label" for="defaultCheck1">
@@ -188,7 +188,7 @@
 
 
                                 <div class="form-check pretty p-switch   py-1">
-                                    <input class="form-check-input elemento" type="checkbox" value="trafego" id="trafego" name="trafego">
+                                    <input class="form-check-input elemento" type="checkbox" value="instalacao_hidro" id="instalacao_hidro" name="instalacao_hidro">
                                     <div class="state p-success">
 
                                         <label class="form-check-label" for="defaultCheck1">
@@ -199,7 +199,7 @@
 
 
                                 <div class="form-check pretty p-switch   py-1">
-                                    <input class="form-check-input elemento" type="checkbox" value="estadoObra" id="estadoObra" name="estadoObra">
+                                    <input class="form-check-input elemento" type="checkbox" value="instalacao_gas" id="instalacao_gas" name="instalacao_gas">
                                     <div class="state p-success">
 
                                         <label class="form-check-label " for="defaultCheck1">
@@ -210,7 +210,7 @@
 
 
                                 <div class="form-check pretty p-switch   py-1">
-                                    <input class="form-check-input elemento" type="checkbox" value="notaObra" id="notaObra" name="notaObra">
+                                    <input class="form-check-input elemento" type="checkbox" value="instalacao_eletrica" id="instalacao_eletrica" name="instalacao_eletrica">
                                     <div class="state p-success">
 
                                         <label class="form-check-label" for="defaultCheck1">
