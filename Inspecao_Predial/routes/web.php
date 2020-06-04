@@ -130,6 +130,11 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('/teste/formulario/novo', 'Teste\testeController@store')->name('teste.store');
 
     // teste Fotos AWS - S3
-    Route::get('/teste/upload-image', 'Teste\ImageController@create')->name('image.create');
-    Route::post('/teste/upload-image/new', 'Teste\ImageController@store')->name('image.store');
+    Route::get('/teste/estruturas', 'Teste\testeController@create')->name('teste.create');
+    Route::post('/teste/estruturas/new', 'Teste\testeController@store')->name('teste.store');
+
+    Route::get('/teste/historico', 'Teste\testeController@index')->name('teste.index');
+
+    // relatorio fotografico
+    Route::get('/teste/historico/{elemento_id}/relatorio-fotografico', 'Teste\testeController@show')->name('teste.relatorio');
 });

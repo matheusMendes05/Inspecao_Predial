@@ -1,15 +1,11 @@
 <?php
 
-namespace App\Http\Controllers\Teste;
+namespace App\Http\Controllers\inspecao\Formularios\mecanizacao;
 
 use App\Http\Controllers\Controller;
-use App\models\Inspecao\inspecao;
-use App\models\inspection\estrutura;
-use App\models\Teste\structures;
-use App\models\Teste\teste;
 use Illuminate\Http\Request;
 
-class testeController extends Controller
+class elevadoresController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -19,14 +15,6 @@ class testeController extends Controller
     public function index()
     {
         //
-
-        $estrutura = structures::all();
-
-        // dd($estrutura);
-
-        return view('Web._teste.historico', [
-            'estruturas' => $estrutura
-        ]);
     }
 
     /**
@@ -37,7 +25,6 @@ class testeController extends Controller
     public function create()
     {
         //
-        return view('Web._teste.formulario');
     }
 
     /**
@@ -46,19 +33,9 @@ class testeController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public static function store(Request $request)
     {
-
-        $inspecao = new inspecao();
-        $inspecao->edificio_id = 1;
-        $inspecao->responsavel_acompanhamento_obra = $request->responsavelObra;
-        $inspecao->save();
-
-        if (isset($request->txt_sistema_edificio) && $request->txt_sistema_edificio == "Estruturas") {
-            return structureController::store($request, $inspecao->id);
-        }
-
-        // dd($request);
+        //
     }
 
     /**
@@ -67,15 +44,9 @@ class testeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($elemento_id)
+    public function show($id)
     {
         //
-        $elemento = structures::where('id', $elemento_id)->first();
-
-        // dd($elemento);
-        return view('Web._teste.analiseElemento', [
-            'elemento' => $elemento
-        ]);
     }
 
     /**

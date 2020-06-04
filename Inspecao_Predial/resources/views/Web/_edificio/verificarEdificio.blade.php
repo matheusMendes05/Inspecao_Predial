@@ -25,7 +25,6 @@
 @endforeach
 @endif
 
-
 <div class="container">
     <div class=" my-4 p-2">
 
@@ -36,6 +35,7 @@
                 </div>
             </div>
 
+            @can('verificar-edificio', $edificio)
             <div class="col-8 border border mt-1">
                 <p class="text-muted">Responsável pela Inspeção:
                     <span class="text-dark font-weight-bold">{{$edificio->responsavel_inspecao}}</span>
@@ -171,6 +171,7 @@
 
                 <div class=" p-4 bg-light">
                     <div class="text-center">
+
                         <span class="mx-4 alert alert-success col-sm-12">
                             <a href="{{route('inspecao.create',['id'=> $edificio->id])}}" class="text-success">
                                 Inspecionar Edificio?
@@ -179,12 +180,15 @@
                         </span>
 
 
+
                         <span class="mx-4 alert alert-primary col-sm-12">
                             <a href=" {{ route('edificio.edit', ['id' => $edificio->id ])}} " class="text-primary col-sm-12">
                                 Editar Registro
                                 <i class="fas fa-edit    "></i>
                             </a>
                         </span>
+
+
                         <!-- <div class="col-4">
                             <button class="btn btn-outline-primary">
                                 Editar Registro
@@ -214,7 +218,7 @@
                 </div>
             </div>
 
-
+            @endcan
         </div>
 
     </div>

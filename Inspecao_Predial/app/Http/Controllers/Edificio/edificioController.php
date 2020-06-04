@@ -5,8 +5,10 @@ namespace App\Http\Controllers\Edificio;
 use App\Http\Controllers\Controller;
 use App\models\Edificio\edificio;
 use App\models\Inspecao\inspecao;
+use Illuminate\Auth\Access\Gate;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Gate as FacadesGate;
 
 class edificioController extends Controller
 {
@@ -109,20 +111,33 @@ class edificioController extends Controller
      */
     public function show($id)
     {
-        // verificando sessao de usuario
-        if (Auth::check() === true) {
+        try {
+            //code...
+            // verificando sessao de usuario
+            if (Auth::check() === true) {
 
-            $edificio = edificio::where('id', $id)->first();
+                // $edificio = edificio::where('id', $id)->first();
 
-            // objeto que verifica numero de inspecoes
-            $verificar_Inspecoes = inspecao::where('edificio_id', $id)->get();
+                // objeto que verifica numero de inspecoes
+                $verificar_Inspecoes = inspecao::where('edificio_id', $id)->get();
 
+                $edificio = edificio::find($id);
 
-            return view('Web._edificio.verificarEdificio', [
-                'edificio' => $edificio,
-                'inspecoes' => $verificar_Inspecoes
-            ]);
-        } else {
+                if ($edificio == null) {
+                    return redirect()->route('home')->withInput()->withErrors('[ERRO] registro nao encontrado em Banco de Dados');
+                }
+                // $this->authorize('verificar-edificio', $edificio);
+                if (FacadesGate::denies('verificar-edificio', $edificio)) {
+                    abort(403, 'Não Autorizado');
+                }
+                return view('Web._edificio.verificarEdificio', [
+                    'edificio' => $edificio,
+                    'inspecoes' => $verificar_Inspecoes
+                ]);
+            } else {
+                return redirect()->route('home')->withInput()->withErrors('[ERRO] você precisa estar Autenticado.');
+            }
+        } catch (\PDOException $th) {
             return redirect()->route('home')->withInput()->withErrors('[ERRO] você precisa estar Autenticado.');
         }
     }
@@ -140,11 +155,19 @@ class edificioController extends Controller
 
             $edificio = edificio::where('id', $id)->first();
 
+            if ($edificio == null) {
+                return redirect()->route('home')->withInput()->withErrors('[ERRO] registro nao encontrado em Banco de Dados');
+            }
+
+            if (FacadesGate::denies('update-edificio', $edificio)) {
+                abort(403, 'Não Autorizado');
+            }
+
             return view('Web._edificio.editarEdificio', [
                 'edificio' => $edificio
             ]);
         } else {
-            return redirect()->route('home')->withInput()->withErrors('[ERRO] você precisa estar Autenticado.');
+            return redirect()->route('home')->withInput()->withErrors('[ERRO] Registro não encontrado.');
         }
     }
 
@@ -163,6 +186,14 @@ class edificioController extends Controller
             try {
                 //code...
                 $edificio = edificio::where('id', $id)->first();
+
+
+                if ($edificio == null) {
+                    return redirect()->route('home')->withInput()->withErrors('[ERRO] registro nao encontrado em Banco de Dados');
+                }
+                if (FacadesGate::denies('update-edificio', $edificio)) {
+                    abort(403, 'Não Autorizado');
+                }
 
                 // editando um edificio
                 $edificio->responsavel_inspecao = $request->txtNome;
@@ -184,7 +215,6 @@ class edificioController extends Controller
                 $edificio->ano_construcao = $request->txtAnoConstrucao;
                 $edificio->construtora = $request->txtConstrutora;
                 $edificio->administrador = $request->txtAdministrador;
-                $edificio->responsavel_acompanhamento_obra = $request->responsavelObra;
                 $edificio->save();
 
                 return redirect()->back()->withErrors('Registros alterados com sucesso');

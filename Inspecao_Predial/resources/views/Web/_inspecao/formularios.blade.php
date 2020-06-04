@@ -1875,8 +1875,256 @@
 
         @if (isset($collection["instalacao_eletrica"]) && $collection["instalacao_eletrica"] == "instalacao_eletrica")
 
-        <h1>instalacao_eletrica</h1>
+        <input type="hidden" name="instalacao_eletrica" value="instalacao_eletrica">
 
+        <div class="row">
+
+            <div class="col-12 bg-success">
+                <div class="text-center text-white">
+                    <h1>Instalação Elétrica</h1>
+                </div>
+            </div>
+            <div class="col-12">
+
+                <div class="row border mt-2 p-2">
+                    <div class="col-12 col-md-3">
+                        <h6 class="mt-3 text-muted">Lâmpadas queimadas / ausência de lâmpadas</h4>
+                    </div>
+
+                    <div class="col-12 col-md-3">
+                        <label for="">Local</label>
+                        <input type="text" name="txtLocalLampadasEletrica" id="" class="form-control" placeholder="Descricão do Local">
+                    </div>
+                    <div class="col-12 col-md-3">
+                        <label for="">Foto</label>
+                        <input type="file" name="txtFotoLampadasEletrica" id="" class="form-control">
+                    </div>
+                    <div class="col-12 col-md-3">
+                        <label for="">Observações</label>
+                        <textarea name="txtObsLampadasEletrica" id="" cols="30" rows="1"></textarea>
+                    </div>
+
+                </div>
+
+
+                <div class="row border p-2 ">
+                    <div class="col-12 col-md-3">
+                        <h6 class="mt-3 text-muted">Ataque de pragas urbanas em quadros elétricos e de
+                            telefonia com fundo de madeira</h4>
+                    </div>
+                    <div class="col-12 col-md-3">
+                        <label for=""></label>
+                        <input type="text" name="txtLocalAtaqueEletrica" id="" class="form-control" placeholder="Descricão do Local">
+                    </div>
+                    <div class="col-12 col-md-3">
+                        <label for=""></label>
+                        <input type="file" name="txtFotoAtaqueEletrica" id="" class="form-control">
+                    </div>
+                    <div class="col-12 col-md-3">
+                        <label for=""></label>
+                        <label for="">Observações</label>
+                        <textarea name="txtObsAtaqueEletrica" id="" cols="30" rows="1"></textarea>
+                    </div>
+                </div>
+
+                <div class="row border p-2 ">
+                    <div class="col-12 col-md-3">
+                        <h6 class="mt-3 text-muted">Modificações das instalações elétricas / improvisos
+                            </h4>
+                    </div>
+                    <div class="col-12 col-md-3">
+                        <label for=""></label>
+                        <input type="text" name="txtLocalModificacoesEletrica" id="" class="form-control" placeholder="Descricão do Local">
+                    </div>
+                    <div class="col-12 col-md-3">
+                        <label for=""></label>
+                        <input type="file" name="txtFotoModificacoesEletrica" id="" class="form-control">
+                    </div>
+                    <div class="col-12 col-md-3">
+                        <label for=""></label>
+                        <label for="">Observações</label>
+                        <textarea name="txtObsModificacoesEletrica" id="" cols="30" rows="1"></textarea>
+                    </div>
+                </div>
+
+                <div class="row border p-2 ">
+                    <div class="col-12 col-md-3">
+                        <h6 class="mt-3 text-muted">Superaquecimento
+                            </h4>
+                    </div>
+                    <div class="col-12 col-md-3">
+                        <label for=""></label>
+                        <input type="text" name="txtLocalSuperaquecimentoEletrica" id="" class="form-control" placeholder="Descricão do Local">
+                    </div>
+                    <div class="col-12 col-md-3">
+                        <label for=""></label>
+                        <input type="file" name="txtFotoSuperaquecimentoEletrica" id="" class="form-control">
+                    </div>
+                    <div class="col-12 col-md-3">
+                        <label for=""></label>
+                        <label for="">Observações</label>
+                        <textarea name="txtObsSuperaquecimentoEletrica" id="" cols="30" rows="1"></textarea>
+                    </div>
+                </div>
+
+
+
+                <div class="row border p-2 ">
+                    <div class="col-12 col-md-3">
+                        <h6 class="mt-3 text-muted">Fiações e cabos elétricos aparentes / com muitas
+                            emendas / partes vivas expostas
+                        </h6>
+                    </div>
+                    <div class="col-12 col-md-3">
+                        <label for=""></label>
+                        <input type="text" name="txtLocalFiacoesEletrica" id="" class="form-control" placeholder="Descricão do Local">
+                    </div>
+                    <div class="col-12 col-md-3">
+                        <label for=""></label>
+                        <input type="file" name="txtFotoFiacoesEletrica" id="" class="form-control">
+                    </div>
+                    <div class="col-12 col-md-3">
+                        <label for=""></label>
+                        <label for="">Observações</label>
+                        <textarea name="txtObsFiacoesEletrica" id="" cols="30" rows="1"></textarea>
+                    </div>
+                </div>
+
+                <div class="row border p-2 ">
+                    <div class="col-12 col-md-3">
+                        <h6 class="mt-3 text-muted">Curto circuito
+                        </h6>
+                    </div>
+                    <div class="col-12 col-md-3">
+                        <label for=""></label>
+                        <input type="text" name="txtLocalCurtoEletrica" id="" class="form-control" placeholder="Descricão do Local">
+                    </div>
+                    <div class="col-12 col-md-3">
+                        <label for=""></label>
+                        <input type="file" name="txtFotoCurtoEletrica" id="" class="form-control">
+                    </div>
+                    <div class="col-12 col-md-3">
+                        <label for=""></label>
+                        <label for="">Observações</label>
+                        <textarea name="txtObsCurtoEletrica" id="" cols="30" rows="1"></textarea>
+                    </div>
+                </div>
+
+                <div class="row border p-2 ">
+                    <div class="col-12 col-md-3">
+                        <h6 class="mt-3 text-muted">Quadro de luz obstruído / trancado / sem identificação dos
+                            circuitos
+                        </h6>
+                    </div>
+                    <div class="col-12 col-md-3">
+                        <label for=""></label>
+                        <input type="text" name="txtLocalQuadroEletrica" id="" class="form-control" placeholder="Descricão do Local">
+                    </div>
+                    <div class="col-12 col-md-3">
+                        <label for=""></label>
+                        <input type="file" name="txtFotoQuadroEletrica" id="" class="form-control">
+                    </div>
+                    <div class="col-12 col-md-3">
+                        <label for=""></label>
+                        <label for="">Observações</label>
+                        <textarea name="txtObsQuadroEletrica" id="" cols="30" rows="1"></textarea>
+                    </div>
+                </div>
+
+
+                <div class="row border p-2 ">
+                    <div class="col-12 col-md-3">
+                        <h6 class="mt-3 text-muted">Ausência proteção barramento
+                        </h6>
+                    </div>
+                    <div class="col-12 col-md-3">
+                        <label for=""></label>
+                        <input type="text" name="txtLocalAusenciaEletrica" id="" class="form-control" placeholder="Descricão do Local">
+                    </div>
+                    <div class="col-12 col-md-3">
+                        <label for=""></label>
+                        <input type="file" name="txtFotoAusenciaEletrica" id="" class="form-control">
+                    </div>
+                    <div class="col-12 col-md-3">
+                        <label for=""></label>
+                        <label for="">Observações</label>
+                        <textarea name="txtObsAusenciaEletrica" id="" cols="30" rows="1"></textarea>
+                    </div>
+                </div>
+
+                <div class="row border p-2 ">
+                    <div class="col-12 col-md-3">
+                        <h6 class="mt-3 text-muted">Falha de tomada / interruptor
+                        </h6>
+                    </div>
+                    <div class="col-12 col-md-3">
+                        <label for=""></label>
+                        <input type="text" name="txtLocalFalhaEletrica" id="" class="form-control" placeholder="Descricão do Local">
+                    </div>
+                    <div class="col-12 col-md-3">
+                        <label for=""></label>
+                        <input type="file" name="txtFotoFalhaEletrica" id="" class="form-control">
+                    </div>
+                    <div class="col-12 col-md-3">
+                        <label for=""></label>
+                        <label for="">Observações</label>
+                        <textarea name="txtObsFalhaEletrica" id="" cols="30" rows="1"></textarea>
+                    </div>
+                </div>
+
+                <div class="row border p-2 ">
+                    <div class="col-12 col-md-3">
+                        <h6 class="mt-3 text-muted">Cerca elétrica danificada
+                        </h6>
+                    </div>
+                    <div class="col-12 col-md-3">
+                        <label for=""></label>
+                        <input type="text" name="txtLocalCercaEletrica" id="" class="form-control" placeholder="Descricão do Local">
+                    </div>
+                    <div class="col-12 col-md-3">
+                        <label for=""></label>
+                        <input type="file" name="txtFotoCercaEletrica" id="" class="form-control">
+                    </div>
+                    <div class="col-12 col-md-3">
+                        <label for=""></label>
+                        <label for="">Observações</label>
+                        <textarea name="txtObsCercaEletrica" id="" cols="30" rows="1"></textarea>
+                    </div>
+                </div>
+
+
+                <div class="row border p-2 ">
+                    <div class="col-12 col-md-3">
+                        <h6 class="mt-3 text-muted">Outro: </h6>
+                    </div>
+                    <div class="col-12 col-md-3">
+                        <label for=""></label>
+                        <input type="text" name="txtLocalOutroEletrica" id="" class="form-control" placeholder="Descricão do Local">
+                    </div>
+                    <div class="col-12 col-md-3">
+                        <label for=""></label>
+                        <input type="file" name="txtFotoOutroEletrica" id="" class="form-control">
+                    </div>
+                    <div class="col-12 col-md-3">
+                        <label for=""></label>
+                        <label for="">Observações</label>
+                        <textarea name="txtObsOutroEletrica" id="" cols="30" rows="1"></textarea>
+                    </div>
+                </div><br />
+            </div>
+        </div>
+
+
+
+        @endif
+
+
+
+        @if (isset($collection["elevadores"]) && $collection["elevadores"] == "elevadores")
+
+        <input type="hidden" name="elevadores" value="elevadores">
+
+        <h1>Elevadores</h1>
         @endif
 
         <!-- @if (isset($collection["fachada"]) && $collection["fachada"] == "fachada")
@@ -1887,6 +2135,12 @@
 
 
         @endif -->
+
+        <!-- @if (isset($collection["fachada"]) && $collection["fachada"] == "fachada")
+
+
+        @endif -->
+
         <!-- @if (isset($collection["fachada"]) && $collection["fachada"] == "fachada")
 
 
@@ -1895,7 +2149,18 @@
 
 
         @endif -->
+        <!-- @if (isset($collection["fachada"]) && $collection["fachada"] == "fachada")
 
+
+        @endif -->
+        <!-- @if (isset($collection["fachada"]) && $collection["fachada"] == "fachada")
+
+
+        @endif -->
+        <!-- @if (isset($collection["fachada"]) && $collection["fachada"] == "fachada")
+
+
+        @endif -->
 
 
 

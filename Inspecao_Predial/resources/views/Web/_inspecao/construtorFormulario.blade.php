@@ -53,6 +53,8 @@
 
                             <fieldset>
                                 <legend class="text-white bg-success col-md-8 col-sm-12">Topicos de Inpeção de Campo</legend>
+
+
                                 <div class="form-check pretty p-switch  py-1">
                                     <input class="form-check-input elemento" type="checkbox" value="estruturas" id="estruturas" name="estruturas">
                                     <div class="state p-success">

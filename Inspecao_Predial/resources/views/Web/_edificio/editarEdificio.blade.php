@@ -24,6 +24,8 @@
         <div class="container">
             <div class=" my-4 p-2">
 
+                @can('update-edificio', $edificio)
+
                 <div class="row">
                     <div class="col-12  border p-2 text-white bg-success">
                         <div class="text-center">
@@ -141,14 +143,6 @@
                             Administrador:
                             <span class="text-dark font-weight-bold">
                                 <input type="text" id="" class="form-control" placeholder="Administrador" name="txtAdministrador" value="{{$edificio->administrador}}">
-                            </span>
-                        </p>
-                    </div>
-                    <div class="col-12 border border mt-1">
-                        <p class="text-muted">
-                            Responsável pelo o acompanhamento da Obra:
-                            <span class="text-dark font-weight-bold">
-                                <input type="text" id="responsavelObra" class="form-control col-10" placeholder="Responsável pelo o acompanhamento da Obra" name="responsavelObra" value="{{$edificio->responsavel_acompanhamento_obra}}">
                             </span>
                         </p>
                     </div>
@@ -271,6 +265,7 @@
 
             </div>
 
+            @endcan
 
 
     </form>

@@ -8,6 +8,9 @@ use App\models\Inspecao\inspecao;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+// use Illuminate\Support\Facades\Gate;
+use Illuminate\Support\Facades\Gate as FacadesGate;
+
 use Illuminate\Support\Facades\Redirect;
 
 class inspecaoController extends Controller
@@ -22,23 +25,20 @@ class inspecaoController extends Controller
         //check all users
         if (Auth::check() === true) {
 
-            $inspecao = inspecao::verificar($inspecao_id);
+            try {
+                //code...
+                $inspecao = inspecao::verificar($inspecao_id);
 
-            // return dd($inspecao);
+                // if ($inspecao == null) {
+                //     return redirect()->route('home')->withInput()->withErrors('[ERRO] você precisa estar Autenticado.');
+                // }
 
-
-            return view('Web._inspecao.verificarInspecao', [
-                'inspecao' => $inspecao
-            ]);
-
-
-            // $inspecao = inspecao::verificar_inspecao_edificios($inspecao_id);
-            // $edificio_id = $id;
-
-            // return view('Web._inspecao.verificarInspecao', [
-            //     'inspecao' => $inspecao,
-            //     'edificio_id' => $edificio_id
-            // ]);
+                return view('Web._inspecao.verificarInspecao', [
+                    'inspecao' => $inspecao
+                ]);
+            } catch (\PDOException $th) {
+                return redirect()->route('home')->withInput()->withErrors('[ERRO]' . $th->getMessage());
+            }
         } else {
             return redirect()->route('home')->withInput()->withErrors('[ERRO] você precisa estar Autenticado.');
         }
@@ -54,23 +54,19 @@ class inspecaoController extends Controller
         // verificando sessao de usuario
         if (Auth::check() === true) {
 
-
-
             // Inspecionar edifio por seu ID
             $edificio = edificio::where('id', $id)->first();
 
             // verificar se inspecao pertence ao edificio que o usuario cadastrou no sistema
-            $verificar_edificio = edificio::where('usuario_id', $edificio->usuario_id)->first();
-            if ($verificar_edificio->usuario_id != Auth::user()->id) {
-                return redirect()->route('home')->withInput()->withErrors('[ERRO] você precisa estar Autenticado.');
-            } else {
-                return view('Web._inspecao.construtorFormulario', [
-                    'edificio' => $edificio
-                ]);
+            if ($edificio == null) {
+                return redirect()->route('home')->withInput()->withErrors('[ERRO] registro nao encontrado na Base de Dados.');
             }
-
-            // dd($edificio);
-
+            if (FacadesGate::denies('historico-inspecao', $edificio)) {
+                abort(403, 'Não Autorizado');
+            }
+            return view('Web._inspecao.construtorFormulario', [
+                'edificio' => $edificio
+            ]);
         } else {
             return redirect()->route('home')->withInput()->withErrors('[ERRO] você precisa estar Autenticado.');
         }
@@ -127,6 +123,9 @@ class inspecaoController extends Controller
             if (isset($request->instalacao_eletrica) && $request->instalacao_eletrica == "instalacao_eletrica") {
                 $collection['instalacao_eletrica'] = $request->instalacao_eletrica;
             }
+            if (isset($request->elevadores) && $request->elevadores == "elevadores") {
+                $collection['elevadores'] = $request->elevadores;
+            }
 
 
 
@@ -152,13 +151,19 @@ class inspecaoController extends Controller
         if (Auth::check() === true) {
 
             $inspecao = inspecao::historico_inspecao_edificios($id);
-            $edificio_id = $id;
+            // $edificio_id = $id;
+            $edificio = edificio::where('id', $id)->first();
 
-            // dd($inspecao);
+            if ($edificio == null) {
+                return redirect()->route('home')->withInput()->withErrors('[ERRO] registro nao encontrado na Base de Dados.');
+            }
+            if (FacadesGate::denies('historico-inspecao', $edificio)) {
+                abort(403, 'Não Autorizado');
+            }
 
             return view('Web._inspecao.historicoInspecao', [
                 'inspecao' => $inspecao,
-                'edificio_id' => $edificio_id
+                'edificio_id' => $id
             ]);
         } else {
             return redirect()->route('home')->withInput()->withErrors('[ERRO] você precisa estar Autenticado.');

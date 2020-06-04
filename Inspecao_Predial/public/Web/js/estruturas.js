@@ -1,54 +1,80 @@
-
 let select = document.querySelector('#descValue');
-let content = document.querySelector('#content');
-
-let formularios = [];
+let content = document.querySelector('#content')
 
 
-function adicionar(element) {
-    // obtendo valor do select
+let estruturas =
+
+    '<select class="custom-select" name="txt_elemento_formulario" id="">' +
+    '<option selected>Fissuras</option>' +
+    '<option value="Destacamento desagregação desplacamento">Destacamento / desagregação / desplacamento</option>' +
+    '<option value="Armadura exposta">Armadura exposta</option>' +
+    '<option value="Corrosão">Corrosão</option>' +
+    '<option value="Peça estrutural com deformação excessiva">Peça estrutural com deformação excessiva</option>' +
+    '<option value="Irregularidades geométricas, falhas de concretagem">Irregularidades geométricas, falhas de concretagem</option>' +
+    '<option value="Eflorescência / lixiviação / infiltração">Eflorescência / lixiviação / infiltração</option>' +
+    '<option value="Outro">Outro</option>' +
+    '</select>';
+
+
+let fundacao =
+    '<select class="custom-select" name="txt_elemento_formulario" id="">' +
+    '<option selected>Erosão do solo</option>' +
+    '<option value="">Recalque diferencial</option>' +
+    '<option value="">Outro</option>' +
+    '</select>';
+
+let vedacao =
+    '<select class="custom-select" name="txt_elemento_formulario" id="">' +
+    '<option selected>Fissura/Trinca</option>' +
+    '<option value="">Eflorescência</option>' +
+    '<option value="">Infiltração</option>' +
+    '<option value="">Irregularidades geométricas (esquadro / prumo / nível / planeza)</option>' +
+    '<option value="">Outro</option>' +
+    '</select>';
+
+let forro =
+    '<select class="custom-select" name="txt_elemento_formulario" id="">' +
+    '<option selected>Deformação excessiva</option>' +
+    '<option value="">Fissura</option>' +
+    '<option value="">Desencaixe</option>' +
+    '<option value="">Utilização de material sujeito a corrosão</option>' +
+    '<option value="">Deficiência no dimensionamento ou inexistência de alçapões </option>' +
+    '<option value="">Outro</option>' +
+    '</select>';
+
+let parede =
+    '<select class="custom-select" name="txt_elemento_formulario" id="">' +
+    '<option selected>Fissura</option>' +
+    '<option value="">Destacamento / desagregação / descolamento</option>' +
+    '<option value="">Infiltração</option>' +
+    '<option value="">Eflorescência / manchas de mofo / bolor</option>' +
+    '<option value="">Falta ou deficiência nas juntas de trabalho e rejunte </option>' +
+    '<option value="">Descascamento / bolhas / enrugamento</option>' +
+    '<option value="">Falha rejunte </option>' +
+    '<option value="">Abertura improvisada para passagem de cabos</option>' +
+    '<option value="">Som cavo</option>' +
+    '<option value="">Outro</option>' +
+    '</select>';
+
+function teste() {
     let value = select.options[select.selectedIndex].value;
-    let item =
 
-        `<div class="row border border-light my-4">` +
-        `<div class="col-12 bg-light p-2">` +
-        `<div class="row ">` +
-        `<div class="col-4">` +
-        `<label for="" class="form-text">Sistema</label>` +
-        `<input type="text" name="descricao[]" id="" class="form-control" value ="${value}" readonly> ` +
-        `</div>` +
-        `<div class="col-4">` +
-        `<label for="" class="form-text">Local</label>` +
-        `<input type="text" name="local[]" class="form-control">` +
-        `</div>` +
+    console.log(value);
 
-        `<div class="col-4">` +
-        `<label for="" class="form-text">Foto</label>` +
-        `<input type="file" class="form-control" name="foto[]">` +
-        `</div>` +
+    if (value == 'Estruturas') {
+        content.innerHTML = estruturas;
+    }
+    if (value == 'Fundacao') {
+        content.innerHTML = fundacao;
+    }
+    if (value == 'Vedacao') {
+        content.innerHTML = vedacao;
+    }
+    if (value == 'Forro') {
+        content.innerHTML = forro;
+    }
+    if (value == 'Parede') {
+        content.innerHTML = parede;
+    }
 
-        `<div class="col-12">` +
-        `<label for="" class="form-text">Observações</label>` +
-        `<textarea name="obs[]" id="" cols="150" rows="5" class="form-control"></textarea>` +
-
-        '<p class="text-rigth mt-3">' +
-        '<Button class="btn btn-danger" id="bottonAdd" onclick="remove(this)">' +
-        'excluir <i class="fa fa-trash" aria-hidden="true"></i>' +
-        '</Button>' +
-        '</p>' +
-
-        `</div>` +
-
-        `</div>` +
-        `</div>` +
-        `</div>`;
-
-    formularios.push(item);
-    content.innerHTML += item;
-}
-
-
-function remove(e) {
-    e.parentNode.parentNode.parentNode.parentNode.outerHTML = '';
-    formularios.splice(formularios.indexOf(e), 1);
 }

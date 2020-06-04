@@ -1,72 +1,81 @@
-<!doctype html>
-<html lang="pt-BR">
+@extends('layouts.dashboard')
 
-<head>
-    <title>Teste de Formulario</title>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+@section('content')
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-</head>
+@if($errors->all())
+@foreach($errors->all() as $error)
+<div class="alert alert-success">
+    {{$error}}
+</div>
+@endforeach
+@endif
 
-<body>
+<div class="bg-success text-white">
+    <h1 class="text-center">Check-list Predial</h1>
+</div>
 
-
+<form action="{{route('teste.store')}}" method="POST" enctype="multipart/form-data">
+    @CSRF
 
     <div class="container">
-        <div class="text-center border-bottom my-4">
-            <h1 class="display-4">Formularios</h1>
-        </div>
+        <div class="border p-4 bg-light ">
+            <div id="componente">
+                <div class="row">
+                    <div class="col-6">
+                        <label for="componente">Sistema à ser Inspecionado</label>
+                        <div class="input-group">
+                            <select class="custom-select" id="descValue" name="txt_sistema_edificio">
+                                <option selected value="Estruturas">Estruturas</option>
+                                <option value="Fundacao">Fundacao</option>
+                                <option value="Vedacao">Vedação</option>
+                                <option value="Forro">Forro</option>
+                                <option value="Parede">Parede</option>
+                            </select>
+                            <div class="input-group-append">
+                                <button class="btn btn-outline-success" type="button" onclick="teste()">Selecionar</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="form-group">
+                            <label for="componente">Elemento do Sistema</label>
+                            <div id="content">
 
-        <div class="row">
-            <div class="col-6">
-                <div class="input-group">
-                    <select class="custom-select" id="descValue" name="tipo">
-                        <option selected value="Fissuras">Fissuras</option>
-                        <option value="Destacamento_DD">Destacamento / desagregação / desplacamento</option>
-                        <option value="Armadura_Exposta">Armadura exposta</option>
-                        <option value="Corrosao">Corrosão</option>
-                        <option value="Peca_estrutural">Peça estrutural com deformação excessiva</option>
-                        <option value="Irregularidades">Irregularidades geométricas, falhas de concretagem</option>
-                        <option value="Eflorescencia">Eflorescência / lixiviação / infiltração</option>
-                        <option value="Outros">Outros</option>
-                    </select>
-                    <div class="input-group-append">
-                        <span class="btn btn-outline-success" id="bottonAdd" onclick="adicionar('descValue')">
-                            Adicionar <i class="fa fa-plus-circle" aria-hidden="true"></i></span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
+            <div id="formulario">
+                <div class="row">
+                    <div class="col-6">
+                        <label for="local" class="form-text text-muted">Local</label>
+                        <input type="text" name="txt_local" class="form-control">
+                    </div>
+                    <div class="col-6">
+                        <label for="foto" class="form-text text-muted">Foto</label>
+                        <input type="file" name="txt_foto" class="form-control">
+                    </div>
+                    <div class="col-12">
+                        <div class="form-group">
+                            <label for="obs" class="form-text text-muted">Observações</label>
+                            <textarea class="form-control" name="txt_obs" id="" rows="5"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center">
+                <button type="submit" class="btn btn-outline-success btn-lg">Enviar</button>
+                <a href="{{route('teste.index')}}" class="ml-2">Historico</a>
+
+            </div>
         </div>
-
-        <form class="mt-4" action="{{ route('teste.store')}}" method="post" enctype="multipart/form-data">
-            @CSRF
-
-            <div id="content">
-
-            </div>
-
-            <div class="text-center my-4">
-                <button type="submit" class="btn btn-outline-success">Verificar</button>
-            </div>
-
-        </form>
-
-
-
     </div>
 
+</form>
 
-    <script src="{{ url(mix('Web/js/estruturas.js'))}}"></script>
+<script src="{{ url(mix('Web/js/estruturas.js'))}}"></script>
 
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-</body>
-
-</html>
+@endsection

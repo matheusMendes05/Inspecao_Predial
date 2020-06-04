@@ -7,8 +7,10 @@ use App\Http\Controllers\Inspecao\Formularios\esquadriaController;
 use App\Http\Controllers\Inspecao\Formularios\estruturas;
 use App\Http\Controllers\inspecao\Formularios\fundacoesController;
 use App\Http\Controllers\Inspecao\Formularios\impermeabilizacaoController;
+use App\Http\Controllers\inspecao\Formularios\instalacaoEletricaController;
 use App\Http\Controllers\Inspecao\Formularios\instalacaoGasController;
 use App\Http\Controllers\Inspecao\Formularios\instalacaoHidroController;
+use App\Http\Controllers\inspecao\Formularios\mecanizacao\elevadoresController;
 use App\Http\Controllers\Inspecao\Formularios\revestimento\fachadaController;
 use App\Http\Controllers\Inspecao\Formularios\revestimento\forroController;
 use App\Http\Controllers\Inspecao\Formularios\revestimento\paredeController;
@@ -93,6 +95,13 @@ class inspecaoCreateController extends Controller
             if (isset($request->instalacao_gas) && $request->instalacao_gas == 'instalacao_gas') {
                 instalacaoGasController::store($request, $inspecao->id);
             }
+            if (isset($request->instalacao_eletrica) && $request->instalacao_eletrica == 'instalacao_eletrica') {
+                instalacaoEletricaController::store($request, $inspecao->id);
+            }
+            if (isset($request->elevadores) && $request->elevadores == 'elevadores') {
+                elevadoresController::store($request, $inspecao->id);
+            }
+
 
             return redirect()->route('edificio.show', [
                 'id' => $id
